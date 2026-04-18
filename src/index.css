@@ -1,96 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Care Connect — Midnight medical design system. All HSL. */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
+    /* Core palette — deep midnight navy + clean medical cyan */
+    --background: 230 55% 5%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 230 50% 8%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 230 55% 6%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 210 100% 65%;
+    --primary-foreground: 230 55% 5%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 230 40% 14%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 230 30% 12%;
+    --muted-foreground: 215 25% 70%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 174 80% 55%;
+    --accent-foreground: 230 55% 5%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 80% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 230 40% 18%;
+    --input: 230 40% 14%;
+    --ring: 210 100% 65%;
+
+    --radius: 1rem;
+
+    /* Brand surfaces */
+    --surface: 230 50% 7%;
+    --surface-elevated: 230 45% 10%;
+    --surface-soft: 220 60% 96%;
+    --ink: 230 55% 8%;
+
+    /* Gradients */
+    --gradient-hero: radial-gradient(ellipse 80% 60% at 50% 0%, hsl(220 90% 25% / 0.5), transparent 60%), linear-gradient(180deg, hsl(230 55% 5%), hsl(230 60% 4%));
+    --gradient-glow: radial-gradient(circle at center, hsl(210 100% 60% / 0.35), transparent 70%);
+    --gradient-accent: linear-gradient(135deg, hsl(210 100% 65%), hsl(174 80% 55%));
+    --gradient-card: linear-gradient(160deg, hsl(230 50% 10% / 0.9), hsl(230 55% 7% / 0.6));
+
+    /* Shadows */
+    --shadow-glow: 0 0 80px hsl(210 100% 60% / 0.25);
+    --shadow-elevated: 0 20px 60px -20px hsl(230 80% 2% / 0.8);
+    --shadow-soft: 0 8px 30px -10px hsl(230 80% 2% / 0.6);
+
+    /* Sidebar (unchanged shadcn) */
+    --sidebar-background: 230 50% 7%;
+    --sidebar-foreground: 210 40% 90%;
+    --sidebar-primary: 210 100% 65%;
+    --sidebar-primary-foreground: 230 55% 5%;
+    --sidebar-accent: 230 40% 14%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 230 40% 18%;
+    --sidebar-ring: 210 100% 65%;
   }
 }
 
@@ -98,8 +72,61 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image: var(--gradient-hero);
+    background-attachment: fixed;
+  }
+  ::selection {
+    background: hsl(var(--primary) / 0.3);
+    color: hsl(var(--foreground));
   }
 }
+
+@layer components {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  .text-gradient {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .glass {
+    background: var(--gradient-card);
+    backdrop-filter: blur(14px);
+    border: 1px solid hsl(var(--border) / 0.6);
+  }
+  .glow-ring {
+    box-shadow: var(--shadow-glow);
+  }
+  .hover-lift {
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    border-color: hsl(var(--primary) / 0.5);
+    box-shadow: 0 20px 50px -20px hsl(210 100% 50% / 0.3);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+@keyframes scroll-hint {
+  0% { transform: translateY(-6px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(10px); opacity: 0; }
+}
+.animate-float { animation: float-slow 8s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
+.animate-scroll-hint { animation: scroll-hint 2s ease-in-out infinite; }
