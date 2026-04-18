@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown, Activity } from "lucide-react";
+import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/hero-medical.jpg";
 
@@ -12,7 +12,7 @@ const Hero = () => {
       {/* background image */}
       <img
         src={heroImg}
-        alt="Glowing 3D medical cross representing Care Connect platform"
+        alt="Premium healthcare clinic visual representing Care Connect"
         width={1920}
         height={1080}
         className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-screen pointer-events-none"
@@ -30,9 +30,9 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
         >
-          <Activity className="w-4 h-4 text-primary" strokeWidth={2.5} />
+          <Sparkles className="w-4 h-4 text-primary" strokeWidth={2.5} />
           <span className="text-xs tracking-[0.25em] uppercase text-muted-foreground">
-            Smart Hospital Management Ecosystem
+            Premium Healthcare, Reimagined
           </span>
         </motion.div>
 
@@ -42,9 +42,9 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="font-display font-bold text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight"
         >
-          Connecting Care.
+          Care You Trust.
           <br />
-          Not Just <span className="italic text-gradient">Records.</span>
+          Comfort You <span className="italic text-gradient">Deserve.</span>
         </motion.h1>
 
         <motion.p
@@ -53,9 +53,8 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-8 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground leading-relaxed"
         >
-          Care Connect is a multi-hospital patient management system that brings
-          Admins, Doctors, Nurses, Guardians and the Public together through one
-          secure, role-based platform.
+          A modern healthcare experience built around you — expert doctors,
+          quiet spaces and quietly powerful technology, all under one roof.
         </motion.p>
 
         <motion.div
@@ -65,12 +64,12 @@ const Hero = () => {
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Button variant="hero" size="lg" asChild>
-            <a href="#about">
-              Explore the Platform <ArrowRight className="w-4 h-4" />
+            <a href="#contact">
+              Book Appointment <ArrowRight className="w-4 h-4" />
             </a>
           </Button>
           <Button variant="ghostOutline" size="lg" asChild>
-            <a href="#roles">View User Roles</a>
+            <a href="#services">Explore Our Services</a>
           </Button>
         </motion.div>
 

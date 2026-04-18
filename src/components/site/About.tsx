@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "5", label: "User Roles" },
-  { value: "100%", label: "Hospital-scoped data" },
-  { value: "JWT", label: "Secure auth" },
-  { value: "PDF", label: "Discharge reports" },
+  { value: "25+", label: "Expert Doctors" },
+  { value: "15K+", label: "Patients Served" },
+  { value: "24/7", label: "Care Available" },
+  { value: "4.9★", label: "Patient Rating" },
 ];
 
 const About = () => {
@@ -28,11 +28,8 @@ const About = () => {
             transition={{ duration: 0.7 }}
             className="md:col-span-3 font-display font-bold text-3xl md:text-5xl leading-tight"
           >
-            We're building a{" "}
-            <mark className="bg-primary/20 text-primary-foreground px-2 rounded-md">
-              unified patient care
-            </mark>{" "}
-            platform that puts <em className="italic text-gradient">trust, transparency</em> and speed at the heart of every hospital.
+            A clinic that treats people —{" "}
+            <em className="italic text-gradient">not just patients.</em>
           </motion.h2>
 
           <motion.div
@@ -43,13 +40,14 @@ const About = () => {
             className="md:col-span-2 space-y-5 text-muted-foreground leading-relaxed"
           >
             <p>
-              Care Connect is designed for multi-hospital environments where
-              admins, doctors, nurses and guardians each need a focused workspace —
-              while patient data stays strictly isolated per hospital.
+              At Care Connect, every detail is designed around your comfort.
+              Our experienced specialists, calm interiors and quiet technology
+              work together to make great care feel effortless.
             </p>
             <p>
-              The public can also discover nearby hospitals and pharmacies, no
-              login required, sorted by real distance using the Haversine formula.
+              We believe medicine should feel personal. From your first visit
+              to your follow-up, you'll always speak to someone who knows
+              your story.
             </p>
           </motion.div>
         </div>
