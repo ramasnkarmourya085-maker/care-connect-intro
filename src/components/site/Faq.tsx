@@ -7,28 +7,28 @@ import {
 
 const faqs = [
   {
-    q: "What is Care Connect?",
-    a: "Care Connect is a hospital patient management platform built for multi-hospital environments. It supports five user roles — Admin, Doctor, Nurse, Guardian and Public — each with a dedicated, role-based dashboard.",
+    q: "How do I book an appointment?",
+    a: "You can book online in under a minute — pick your specialist, choose a time slot and confirm. We'll send a gentle reminder before your visit.",
   },
   {
-    q: "How is patient data kept secure?",
-    a: "All staff accounts are scoped to their hospital, so users at one hospital cannot access records from another. Authentication uses JWT tokens, passwords are bcrypt-hashed, and each API endpoint enforces strict role-based authorization.",
+    q: "Do you accept walk-in patients?",
+    a: "Yes, walk-ins are welcome during clinic hours. However, booking ahead guarantees minimal waiting and a confirmed time with your preferred doctor.",
   },
   {
-    q: "Do guardians and the public need an account?",
-    a: "Guardians log in with a patient ID to view their family member's care details. The public does not need an account at all — they can directly search for nearby hospitals and pharmacies.",
+    q: "Are my medical records kept private?",
+    a: "Always. Every record is encrypted, access is strictly controlled, and your information is never shared without your explicit consent.",
   },
   {
-    q: "Can doctors generate discharge reports?",
-    a: "Yes. Doctors can generate a professional PDF report including patient info, diagnosis, medications, injections, diet, monitoring logs and signature lines.",
+    q: "Do you offer emergency or after-hours care?",
+    a: "Our care line is available 24/7 for urgent guidance. For acute emergencies, please call your local emergency number first.",
   },
   {
-    q: "What technology powers Care Connect?",
-    a: "The frontend is built with React + Vite + Tailwind. The backend uses FastAPI with JWT authentication, bcrypt password hashing, and JSON-based thread-safe storage. Reports use fpdf2.",
+    q: "Can I get a digital copy of my reports?",
+    a: "Yes. All test results, prescriptions and visit summaries are available securely through your Care Connect account, anytime.",
   },
   {
-    q: "Is this a finished product?",
-    a: "Care Connect is currently a working prototype. Future versions will add real database support, in-app chat, video consultation and appointment scheduling.",
+    q: "Do you offer follow-up consultations?",
+    a: "Of course. Follow-ups can be in-clinic or via video, ensuring your care continues smoothly after every visit.",
   },
 ];
 
@@ -42,8 +42,8 @@ const Faq = () => {
               / FAQ's
             </p>
             <h2 className="font-display font-bold text-4xl md:text-6xl leading-tight">
-              Some <br /> Questions <br />
-              <span className="italic text-gradient">For Our Visitors</span>
+              Questions, <br /> answered <br />
+              <span className="italic text-gradient">honestly.</span>
             </h2>
           </div>
 

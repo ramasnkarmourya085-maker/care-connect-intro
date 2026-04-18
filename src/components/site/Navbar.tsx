@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Activity } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const links = [
   { href: "#about", label: "About" },
-  { href: "#features", label: "Features" },
-  { href: "#roles", label: "Roles" },
-  { href: "#workflow", label: "Workflow" },
-  { href: "#tech", label: "Tech" },
+  { href: "#services", label: "Services" },
+  { href: "#why", label: "Why Us" },
+  { href: "#workflow", label: "Your Visit" },
   { href: "#faq", label: "FAQ" },
 ];
 
@@ -29,8 +28,8 @@ const Navbar = () => {
         }`}
       >
         <a href="#top" className="flex items-center gap-2 pl-2">
-          <span className="grid place-items-center w-8 h-8 rounded-xl bg-primary/15 ring-1 ring-primary/40">
-            <Activity className="w-4 h-4 text-primary" strokeWidth={2.5} />
+          <span className="grid place-items-center w-9 h-9 rounded-xl bg-primary/15 ring-1 ring-primary/40 font-display font-bold text-primary text-sm">
+            C²
           </span>
           <span className="font-display text-xl font-bold tracking-tight">
             Care <span className="text-gradient">Connect</span>
@@ -52,7 +51,7 @@ const Navbar = () => {
 
         <div className="hidden md:block">
           <Button variant="hero" size="sm" asChild>
-            <a href="#contact">Get in touch →</a>
+            <a href="#contact">Book Appointment →</a>
           </Button>
         </div>
 
@@ -79,7 +78,7 @@ const Navbar = () => {
           ))}
           <Button variant="hero" size="sm" asChild>
             <a href="#contact" onClick={() => setOpen(false)}>
-              Get in touch →
+              Book Appointment →
             </a>
           </Button>
         </div>

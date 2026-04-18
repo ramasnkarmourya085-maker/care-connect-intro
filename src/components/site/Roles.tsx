@@ -1,91 +1,68 @@
 import { motion } from "framer-motion";
 import {
   ShieldCheck,
-  Stethoscope,
-  HeartPulse,
-  Users,
-  MapPin,
+  Sparkles,
+  HeartHandshake,
+  Microscope,
+  Clock,
+  Leaf,
 } from "lucide-react";
 
-const roles = [
+const reasons = [
   {
     icon: ShieldCheck,
-    title: "Admin",
-    sub: "Hospital Administrator",
-    points: [
-      "Register new patients with unique IDs",
-      "Add doctors & nurses to the hospital",
-      "Assign doctors to specific patients",
-      "Monitor staff and ward assignments",
-    ],
+    title: "Trusted Expertise",
+    desc: "Board-certified specialists with decades of focused experience across every department.",
   },
   {
-    icon: Stethoscope,
-    title: "Doctor",
-    sub: "Treatment & Reports",
-    points: [
-      "View patients assigned to you",
-      "Add diagnosis, medications & injections",
-      "Set diet plans & update health status",
-      "Generate full PDF discharge reports",
-    ],
+    icon: Microscope,
+    title: "Advanced Technology",
+    desc: "Modern diagnostic equipment and digital health records for faster, more accurate care.",
   },
   {
-    icon: HeartPulse,
-    title: "Nurse",
-    sub: "Vitals & Monitoring",
-    points: [
-      "View patients in assigned ward/room",
-      "Record BP, heart rate, temperature, SpO₂",
-      "Add observation notes per session",
-      "Track full monitoring history",
-    ],
+    icon: Leaf,
+    title: "Strict Hygiene",
+    desc: "Hospital-grade sanitization standards followed in every room, every visit, every time.",
   },
   {
-    icon: Users,
-    title: "Guardian",
-    sub: "Family Member",
-    points: [
-      "View linked patient's live information",
-      "See assigned doctor & nurse details",
-      "Read full treatment & vitals timeline",
-      "Track current health status",
-    ],
+    icon: HeartHandshake,
+    title: "Patient-First Approach",
+    desc: "We listen first, explain clearly, and design every plan around your unique needs.",
   },
   {
-    icon: MapPin,
-    title: "Public",
-    sub: "No login required",
-    points: [
-      "Find nearby hospitals via GPS",
-      "Find nearby pharmacies",
-      "Sorted by real distance",
-      "Powered by Haversine formula",
-    ],
+    icon: Clock,
+    title: "On-Time Appointments",
+    desc: "Respect for your time — minimal waiting, smooth check-in and clear scheduling.",
+  },
+  {
+    icon: Sparkles,
+    title: "Premium Comfort",
+    desc: "Quiet, beautifully designed spaces that put you at ease from the moment you arrive.",
   },
 ];
 
 const Roles = () => {
   return (
-    <section id="roles" className="relative py-28 px-6">
+    <section id="why" className="relative py-28 px-6">
       <div className="container max-w-6xl">
         <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
           <div>
             <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
-              / Five Dashboards
+              / Why Choose Us
             </p>
             <h2 className="font-display font-bold text-4xl md:text-6xl leading-tight max-w-2xl">
-              One platform. <span className="italic text-gradient">Five</span> ways to care.
+              The standard of care{" "}
+              <span className="italic text-gradient">you've been waiting for.</span>
             </h2>
           </div>
           <p className="text-muted-foreground max-w-sm">
-            Each role gets a focused, role-based dashboard with strict
-            permissions and hospital-scoped access.
+            Six quiet promises that shape every consultation, every diagnosis
+            and every follow-up at Care Connect.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {roles.map((r, i) => {
+          {reasons.map((r, i) => {
             const Icon = r.icon;
             return (
               <motion.article
@@ -104,17 +81,9 @@ const Roles = () => {
                   <h3 className="mt-5 font-display text-2xl font-bold">
                     {r.title}
                   </h3>
-                  <p className="text-xs uppercase tracking-wider text-accent mt-1">
-                    {r.sub}
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                    {r.desc}
                   </p>
-                  <ul className="mt-5 space-y-2 text-sm text-muted-foreground">
-                    {r.points.map((p) => (
-                      <li key={p} className="flex gap-2">
-                        <span className="text-primary mt-1">›</span>
-                        <span>{p}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
               </motion.article>
             );

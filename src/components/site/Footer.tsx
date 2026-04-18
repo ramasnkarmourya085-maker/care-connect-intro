@@ -1,26 +1,10 @@
-import { Activity, Mail, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Mail, Instagram, Linkedin, Youtube } from "lucide-react";
 
 const socials = [
-  {
-    label: "Email",
-    href: "mailto:hello@careconnect.app",
-    Icon: Mail,
-  },
-  {
-    label: "Instagram",
-    href: "https://instagram.com/",
-    Icon: Instagram,
-  },
-  {
-    label: "LinkedIn",
-    href: "https://linkedin.com/",
-    Icon: Linkedin,
-  },
-  {
-    label: "YouTube",
-    href: "https://youtube.com/",
-    Icon: Youtube,
-  },
+  { label: "Email", href: "mailto:hello@careconnect.app", Icon: Mail },
+  { label: "Instagram", href: "https://instagram.com/", Icon: Instagram },
+  { label: "LinkedIn", href: "https://linkedin.com/", Icon: Linkedin },
+  { label: "YouTube", href: "https://youtube.com/", Icon: Youtube },
 ];
 
 const Footer = () => {
@@ -35,18 +19,18 @@ const Footer = () => {
       <div className="relative px-6 md:px-12 py-16">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div>
-            <div className="flex items-center gap-2 mb-6">
-              <span className="grid place-items-center w-10 h-10 rounded-xl bg-primary/15 ring-1 ring-primary/40">
-                <Activity className="w-5 h-5 text-primary" strokeWidth={2.5} />
+            <a href="#top" className="inline-flex items-center gap-3 mb-6">
+              <span className="grid place-items-center w-11 h-11 rounded-2xl bg-primary/15 ring-1 ring-primary/40 font-display font-bold text-primary text-lg">
+                C²
               </span>
               <span className="font-display text-2xl font-bold tracking-tight">
                 Care <span className="text-gradient">Connect</span>
               </span>
-            </div>
+            </a>
 
             <p className="max-w-md text-muted-foreground leading-relaxed">
-              Connecting patients, families and hospitals through one secure,
-              role-based care platform.
+              Premium healthcare, designed around you. Quiet spaces, expert
+              doctors and care that always feels personal.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -70,24 +54,22 @@ const Footer = () => {
 
           <div className="grid grid-cols-2 gap-10">
             <div>
-              <h4 className="font-semibold mb-4 text-sm">Navigation</h4>
+              <h4 className="font-semibold mb-4 text-sm">Explore</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><a href="#about" className="hover:text-foreground">About</a></li>
-                <li><a href="#features" className="hover:text-foreground">Features</a></li>
-                <li><a href="#roles" className="hover:text-foreground">Roles</a></li>
-                <li><a href="#workflow" className="hover:text-foreground">Workflow</a></li>
-                <li><a href="#tech" className="hover:text-foreground">Tech Stack</a></li>
+                <li><a href="#services" className="hover:text-foreground">Services</a></li>
+                <li><a href="#why" className="hover:text-foreground">Why Choose Us</a></li>
+                <li><a href="#workflow" className="hover:text-foreground">Your Visit</a></li>
                 <li><a href="#faq" className="hover:text-foreground">FAQ</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4 text-sm">Built With</h4>
+              <h4 className="font-semibold mb-4 text-sm">Visit</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>React + Vite</li>
-                <li>Tailwind CSS</li>
-                <li>FastAPI · Python</li>
-                <li>JWT · bcrypt</li>
-                <li>fpdf2 · Haversine</li>
+                <li>Mon – Sat · 9:00 – 20:00</li>
+                <li>Sunday · 10:00 – 14:00</li>
+                <li>24/7 Care Line Available</li>
+                <li>hello@careconnect.app</li>
               </ul>
             </div>
           </div>
@@ -95,7 +77,7 @@ const Footer = () => {
 
         <div className="mt-14 pt-8 border-t border-border/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} Care Connect. All rights reserved.</p>
-          <p className="tracking-[0.2em] uppercase">Connecting Care · Not Just Records</p>
+          <p className="tracking-[0.2em] uppercase">Care You Trust · Comfort You Deserve</p>
         </div>
       </div>
     </footer>
