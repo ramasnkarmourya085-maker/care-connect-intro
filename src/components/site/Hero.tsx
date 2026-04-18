@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, Activity } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/hero-medical.jpg";
 
@@ -24,14 +24,17 @@ const Hero = () => {
       <div className="absolute bottom-0 -right-32 w-[500px] h-[500px] rounded-full bg-accent/15 blur-[140px] animate-pulse-glow" />
 
       <div className="relative z-10 container max-w-5xl px-6 text-center">
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-xs md:text-sm tracking-[0.3em] uppercase text-muted-foreground mb-6"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
         >
-          A Smart Hospital Management Ecosystem
-        </motion.p>
+          <Activity className="w-4 h-4 text-primary" strokeWidth={2.5} />
+          <span className="text-xs tracking-[0.25em] uppercase text-muted-foreground">
+            Smart Hospital Management Ecosystem
+          </span>
+        </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
