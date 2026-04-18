@@ -4,7 +4,7 @@ import About from "@/components/site/About";
 import Features from "@/components/site/Features";
 import Roles from "@/components/site/Roles";
 import Workflow from "@/components/site/Workflow";
-import TechStack from "@/components/site/TechStack";
+import Cta from "@/components/site/TechStack";
 import Faq from "@/components/site/Faq";
 import Footer from "@/components/site/Footer";
 
@@ -17,8 +17,8 @@ const Index = () => {
       <Features />
       <Roles />
       <Workflow />
-      <TechStack />
       <Faq />
+      <Cta />
       <Footer />
     </main>
   );
