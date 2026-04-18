@@ -18,7 +18,7 @@
     --popover: 230 55% 6%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 100% 65%;
+    --primary: 165 75% 50%;
     --primary-foreground: 230 55% 5%;
 
     --secondary: 230 40% 14%;
@@ -27,7 +27,7 @@
     --muted: 230 30% 12%;
     --muted-foreground: 215 25% 70%;
 
-    --accent: 174 80% 55%;
+    --accent: 165 75% 50%;
     --accent-foreground: 230 55% 5%;
 
     --destructive: 0 80% 60%;
@@ -35,7 +35,7 @@
 
     --border: 230 40% 18%;
     --input: 230 40% 14%;
-    --ring: 210 100% 65%;
+    --ring: 165 75% 50%;
 
     --radius: 1rem;
 
@@ -46,25 +46,25 @@
     --ink: 230 55% 8%;
 
     /* Gradients */
-    --gradient-hero: radial-gradient(ellipse 80% 60% at 50% 0%, hsl(220 90% 25% / 0.5), transparent 60%), linear-gradient(180deg, hsl(230 55% 5%), hsl(230 60% 4%));
-    --gradient-glow: radial-gradient(circle at center, hsl(210 100% 60% / 0.35), transparent 70%);
-    --gradient-accent: linear-gradient(135deg, hsl(210 100% 65%), hsl(174 80% 55%));
+    --gradient-hero: radial-gradient(ellipse 80% 60% at 50% 0%, hsl(165 75% 25% / 0.45), transparent 60%), linear-gradient(180deg, hsl(230 55% 5%), hsl(230 60% 4%));
+    --gradient-glow: radial-gradient(circle at center, hsl(165 75% 50% / 0.35), transparent 70%);
+    --gradient-accent: linear-gradient(135deg, hsl(165 75% 50%), hsl(180 70% 45%));
     --gradient-card: linear-gradient(160deg, hsl(230 50% 10% / 0.9), hsl(230 55% 7% / 0.6));
 
     /* Shadows */
-    --shadow-glow: 0 0 80px hsl(210 100% 60% / 0.25);
+    --shadow-glow: 0 0 80px hsl(165 75% 45% / 0.3);
     --shadow-elevated: 0 20px 60px -20px hsl(230 80% 2% / 0.8);
     --shadow-soft: 0 8px 30px -10px hsl(230 80% 2% / 0.6);
 
     /* Sidebar (unchanged shadcn) */
     --sidebar-background: 230 50% 7%;
     --sidebar-foreground: 210 40% 90%;
-    --sidebar-primary: 210 100% 65%;
+    --sidebar-primary: 165 75% 50%;
     --sidebar-primary-foreground: 230 55% 5%;
     --sidebar-accent: 230 40% 14%;
     --sidebar-accent-foreground: 210 40% 98%;
     --sidebar-border: 230 40% 18%;
-    --sidebar-ring: 210 100% 65%;
+    --sidebar-ring: 165 75% 50%;
   }
 }
 
@@ -110,7 +110,7 @@
   .hover-lift:hover {
     transform: translateY(-4px);
     border-color: hsl(var(--primary) / 0.5);
-    box-shadow: 0 20px 50px -20px hsl(210 100% 50% / 0.3);
+    box-shadow: 0 20px 50px -20px hsl(165 75% 45% / 0.35);
   }
 }
 
