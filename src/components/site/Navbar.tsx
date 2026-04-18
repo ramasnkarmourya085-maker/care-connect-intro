@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Heart } from "lucide-react";
+import { Menu, X, Activity } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const links = [
@@ -28,11 +28,11 @@ const Navbar = () => {
         }`}
       >
         <a href="#top" className="flex items-center gap-2 pl-2">
-          <span className="grid place-items-center w-8 h-8 rounded-full bg-gradient-accent shadow-glow">
-            <Heart className="w-4 h-4 text-primary-foreground" fill="currentColor" />
+          <span className="grid place-items-center w-8 h-8 rounded-xl bg-primary/15 ring-1 ring-primary/40">
+            <Activity className="w-4 h-4 text-primary" strokeWidth={2.5} />
           </span>
           <span className="font-display text-xl font-bold tracking-tight">
-            Care<span className="italic text-gradient">Connect</span>
+            Care <span className="text-gradient">Connect</span>
           </span>
         </a>
 
