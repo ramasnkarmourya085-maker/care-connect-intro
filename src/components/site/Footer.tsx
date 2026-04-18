@@ -59,7 +59,7 @@ const Footer = () => {
             <h4 className="font-semibold mb-4 text-sm">Project</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>BCA Minor Project</li>
-              <li>By Praveen Kumar Maurya</li>
+              <li>Department of Computer Application</li>
               <li>G.I.H.S Mahavidyalaya</li>
               <li>University of Lucknow</li>
             </ul>
