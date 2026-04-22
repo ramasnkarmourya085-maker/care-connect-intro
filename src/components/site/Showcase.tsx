@@ -1,9 +1,16 @@
-import { Award, MapPin, Calendar, Sparkles, Users, Rocket } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Award, MapPin, Calendar, Sparkles, Users, Rocket, X } from "lucide-react";
 import showcase1 from "@/assets/showcase-iitbhu-1.jpeg";
 import showcase2 from "@/assets/showcase-iitbhu-2.jpeg";
 import cu1 from "@/assets/showcase-cu-1.png";
 import cu2 from "@/assets/showcase-cu-2.png";
 import cu3 from "@/assets/showcase-cu-3.png";
+import cu4 from "@/assets/showcase-cu-4.png";
+import cu5 from "@/assets/showcase-cu-5.png";
+import cu6 from "@/assets/showcase-cu-6.png";
+import cu7 from "@/assets/showcase-cu-7.png";
+import cu8 from "@/assets/showcase-cu-8.png";
+import cu9 from "@/assets/showcase-cu-9.jpeg";
 
 type EventItem = {
   image: string;
@@ -12,7 +19,7 @@ type EventItem = {
   description: string;
 };
 
-type Showcase = {
+type ShowcaseBlock = {
   id: string;
   badge: string;
   title: string;
@@ -20,11 +27,12 @@ type Showcase = {
   intro: string;
   stats: { icon: typeof MapPin; label: string; value: string }[];
   gallery: EventItem[];
+  extraImages?: { image: string; alt: string }[];
   quote?: string;
   quoteAuthor?: string;
 };
 
-const showcases: Showcase[] = [
+const showcases: ShowcaseBlock[] = [
   {
     id: "iitbhu",
     badge: "Featured Showcase",
@@ -92,6 +100,14 @@ const showcases: Showcase[] = [
           "Engaging with judges, faculty, and fellow innovators at Chandigarh University. Currently in discussions for funding opportunities and future collaboration with the leadership of the university.",
       },
     ],
+    extraImages: [
+      { image: cu4, alt: "Care Connect live demo at Chandigarh University" },
+      { image: cu5, alt: "Discussion with judges at AI Conclave" },
+      { image: cu6, alt: "Team at Chandigarh University campus" },
+      { image: cu7, alt: "Care Connect on display" },
+      { image: cu8, alt: "AI Conclave moments collage" },
+      { image: cu9, alt: "SciFusion Nexus 2026 group photo" },
+    ],
     quote:
       "We believe this is just the beginning — with the right support, Care Connect can create a meaningful impact in healthcare.",
     quoteAuthor: "— Nishant Pandey, Founder · Praveen Kumar Maurya, Co-Founder",
@@ -99,6 +115,24 @@ const showcases: Showcase[] = [
 ];
 
 const Showcase = () => {
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(
+    null
+  );
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightbox(null);
+    };
+    if (lightbox) {
+      document.addEventListener("keydown", onKey);
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [lightbox]);
+
   return (
     <section id="showcase" className="relative py-24 md:py-32">
       <div className="container mx-auto px-4 space-y-28">
@@ -139,7 +173,12 @@ const Showcase = () => {
                   key={e.title}
                   className="group glass rounded-3xl overflow-hidden hover-lift"
                 >
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                  <button
+                    type="button"
+                    onClick={() => setLightbox({ src: e.image, alt: e.title })}
+                    className="relative aspect-[4/3] overflow-hidden block w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                    aria-label={`Open image: ${e.title}`}
+                  >
                     <img
                       src={e.image}
                       alt={e.title}
@@ -147,7 +186,7 @@ const Showcase = () => {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4">
+                    <div className="absolute bottom-4 left-4 right-4 text-left">
                       <p className="text-xs uppercase tracking-widest text-primary mb-1">
                         {e.subtitle}
                       </p>
@@ -155,7 +194,7 @@ const Showcase = () => {
                         {e.title}
                       </h3>
                     </div>
-                  </div>
+                  </button>
                   <div className="p-6">
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       {e.description}
@@ -164,6 +203,35 @@ const Showcase = () => {
                 </article>
               ))}
             </div>
+
+            {s.extraImages && s.extraImages.length > 0 && (
+              <div className="mt-10 max-w-5xl mx-auto">
+                <p className="text-center text-xs uppercase tracking-widest text-muted-foreground mb-6">
+                  More Moments
+                </p>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  {s.extraImages.map((img, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() =>
+                        setLightbox({ src: img.image, alt: img.alt })
+                      }
+                      className="group relative aspect-square overflow-hidden rounded-2xl glass hover-lift focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                      aria-label={`Open image: ${img.alt}`}
+                    >
+                      <img
+                        src={img.image}
+                        alt={img.alt}
+                        loading="lazy"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-background/0 group-hover:bg-background/20 transition-colors" />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {s.id === "chandigarh" && (
               <div className="mt-10 max-w-3xl mx-auto">
@@ -209,6 +277,30 @@ const Showcase = () => {
           </div>
         ))}
       </div>
+
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-[100] bg-background/90 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in"
+          onClick={() => setLightbox(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            type="button"
+            onClick={() => setLightbox(null)}
+            className="absolute top-4 right-4 w-11 h-11 rounded-full glass grid place-items-center text-foreground hover:bg-primary/20 transition-colors"
+            aria-label="Close image"
+          >
+            <X className="w-5 h-5" />
+          </button>
+          <img
+            src={lightbox.src}
+            alt={lightbox.alt}
+            onClick={(e) => e.stopPropagation()}
+            className="max-w-[95vw] max-h-[90vh] object-contain rounded-2xl shadow-2xl"
+          />
+        </div>
+      )}
     </section>
   );
 };
