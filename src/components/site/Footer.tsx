@@ -1,4 +1,5 @@
 import { Mail, Instagram, Linkedin, Youtube } from "lucide-react";
+import logo from "@/assets/care-connect-logo.jpeg";
 
 const socials = [
   { label: "Email", href: "mailto:hello@careconnect.app", Icon: Mail },
@@ -20,8 +21,8 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div>
             <a href="#top" className="inline-flex items-center gap-3 mb-6">
-              <span className="grid place-items-center w-11 h-11 rounded-2xl bg-primary/15 ring-1 ring-primary/40 font-display font-bold text-primary text-lg">
-                C²
+              <span className="grid place-items-center w-12 h-12 rounded-2xl overflow-hidden bg-background ring-1 ring-primary/40">
+                <img src={logo} alt="Care Connect logo" className="w-full h-full object-cover" />
               </span>
               <span className="font-display text-2xl font-bold tracking-tight">
                 Care <span className="text-gradient">Connect</span>
