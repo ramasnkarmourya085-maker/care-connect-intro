@@ -34,7 +34,7 @@ const showcases: Showcase[] = [
       "A proud milestone — Care Connect was showcased at one of India's most prestigious institutions, earning appreciation from medical experts and industry leaders.",
     stats: [
       { icon: MapPin, label: "Venue", value: "IIT (BHU) Varanasi" },
-      { icon: Award, label: "Reviewed By", value: "CEO, Mankind Pharma" },
+      { icon: Award, label: "Reviewed By", value: "Mankind Pharma" },
       { icon: Calendar, label: "Event", value: "Research & Project Expo" },
     ],
     gallery: [
