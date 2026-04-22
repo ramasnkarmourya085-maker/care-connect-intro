@@ -66,7 +66,7 @@ const showcases: Showcase[] = [
       "Care Connect was showcased at the AI Conclave: Science, Society & Future — AI for All, hosted by Chandigarh University, Uttar Pradesh. The project earned highly positive feedback and opened doors to funding discussions.",
     stats: [
       { icon: MapPin, label: "Venue", value: "Chandigarh University, UP" },
-      { icon: Rocket, label: "Outcome", value: "Funding Discussions" },
+      { icon: Rocket, label: "Outcome", value: "DRDO Meet & Funding Talks" },
       { icon: Calendar, label: "Event", value: "AI Conclave 2026" },
     ],
     gallery: [
