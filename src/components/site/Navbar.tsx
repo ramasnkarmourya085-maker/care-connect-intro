@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/site/ThemeToggle";
+import logo from "@/assets/care-connect-logo.jpeg";
 
 const links = [
   { href: "#about", label: "About" },
@@ -30,8 +31,8 @@ const Navbar = () => {
         }`}
       >
         <a href="#top" className="flex items-center gap-2 pl-2">
-          <span className="grid place-items-center w-9 h-9 rounded-xl bg-primary/15 ring-1 ring-primary/40 font-display font-bold text-primary text-sm">
-            C²
+          <span className="grid place-items-center w-10 h-10 rounded-xl overflow-hidden bg-background ring-1 ring-primary/40">
+            <img src={logo} alt="Care Connect logo" className="w-full h-full object-cover" />
           </span>
           <span className="font-display text-xl font-bold tracking-tight">
             Care <span className="text-gradient">Connect</span>
