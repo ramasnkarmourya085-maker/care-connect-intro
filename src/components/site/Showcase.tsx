@@ -1,16 +1,10 @@
 import { useEffect, useState } from "react";
-import { Award, MapPin, Calendar, Sparkles, Users, Rocket, X } from "lucide-react";
+import { Award, MapPin, Calendar, Sparkles, Rocket, X } from "lucide-react";
 import showcase1 from "@/assets/showcase-iitbhu-1.jpeg";
 import showcase2 from "@/assets/showcase-iitbhu-2.jpeg";
 import cu1 from "@/assets/showcase-cu-1.png";
 import cu2 from "@/assets/showcase-cu-2.png";
 import cu3 from "@/assets/showcase-cu-3.png";
-import cu4 from "@/assets/showcase-cu-4.png";
-import cu5 from "@/assets/showcase-cu-5.png";
-import cu6 from "@/assets/showcase-cu-6.png";
-import cu7 from "@/assets/showcase-cu-7.png";
-import cu8 from "@/assets/showcase-cu-8.png";
-import cu9 from "@/assets/showcase-cu-9.jpeg";
 
 type EventItem = {
   image: string;
@@ -99,14 +93,6 @@ const showcases: ShowcaseBlock[] = [
         description:
           "Engaging with judges, faculty, and fellow innovators at Chandigarh University. Currently in discussions for funding opportunities and future collaboration with the leadership of the university.",
       },
-    ],
-    extraImages: [
-      { image: cu4, alt: "Care Connect live demo at Chandigarh University" },
-      { image: cu5, alt: "Discussion with judges at AI Conclave" },
-      { image: cu6, alt: "Team at Chandigarh University campus" },
-      { image: cu7, alt: "Care Connect on display" },
-      { image: cu8, alt: "AI Conclave moments collage" },
-      { image: cu9, alt: "SciFusion Nexus 2026 group photo" },
     ],
     quote:
       "We believe this is just the beginning — with the right support, Care Connect can create a meaningful impact in healthcare.",
@@ -229,35 +215,6 @@ const Showcase = () => {
                       <div className="absolute inset-0 bg-background/0 group-hover:bg-background/20 transition-colors" />
                     </button>
                   ))}
-                </div>
-              </div>
-            )}
-
-            {s.id === "chandigarh" && (
-              <div className="mt-10 max-w-3xl mx-auto">
-                <div className="glass rounded-3xl p-8 text-center">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 ring-1 ring-primary/40 text-xs uppercase tracking-widest text-primary mb-5">
-                    <Users className="w-3.5 h-3.5" />
-                    The Team Behind Care Connect
-                  </div>
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div>
-                      <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">
-                        Founder
-                      </p>
-                      <p className="font-display text-xl font-semibold">
-                        Nishant Pandey
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">
-                        Co-Founder
-                      </p>
-                      <p className="font-display text-xl font-semibold">
-                        Praveen Kumar Maurya
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             )}
