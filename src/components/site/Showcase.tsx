@@ -100,14 +100,6 @@ const showcases: ShowcaseBlock[] = [
           "Engaging with judges, faculty, and fellow innovators at Chandigarh University. Currently in discussions for funding opportunities and future collaboration with the leadership of the university.",
       },
     ],
-    extraImages: [
-      { image: cu4, alt: "Care Connect live demo at Chandigarh University" },
-      { image: cu5, alt: "Discussion with judges at AI Conclave" },
-      { image: cu6, alt: "Team at Chandigarh University campus" },
-      { image: cu7, alt: "Care Connect on display" },
-      { image: cu8, alt: "AI Conclave moments collage" },
-      { image: cu9, alt: "SciFusion Nexus 2026 group photo" },
-    ],
     quote:
       "We believe this is just the beginning — with the right support, Care Connect can create a meaningful impact in healthcare.",
     quoteAuthor: "— Nishant Pandey, Founder · Praveen Kumar Maurya, Co-Founder",
@@ -229,35 +221,6 @@ const Showcase = () => {
                       <div className="absolute inset-0 bg-background/0 group-hover:bg-background/20 transition-colors" />
                     </button>
                   ))}
-                </div>
-              </div>
-            )}
-
-            {s.id === "chandigarh" && (
-              <div className="mt-10 max-w-3xl mx-auto">
-                <div className="glass rounded-3xl p-8 text-center">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/15 ring-1 ring-primary/40 text-xs uppercase tracking-widest text-primary mb-5">
-                    <Users className="w-3.5 h-3.5" />
-                    The Team Behind Care Connect
-                  </div>
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div>
-                      <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">
-                        Founder
-                      </p>
-                      <p className="font-display text-xl font-semibold">
-                        Nishant Pandey
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">
-                        Co-Founder
-                      </p>
-                      <p className="font-display text-xl font-semibold">
-                        Praveen Kumar Maurya
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             )}
