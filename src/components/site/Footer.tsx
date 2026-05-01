@@ -2,7 +2,7 @@ import { Mail, Instagram, Linkedin, Youtube } from "lucide-react";
 import logo from "@/assets/care-connect-logo.jpeg";
 
 const socials = [
-  { label: "Email", href: "mailto:hello@careconnect.app", Icon: Mail },
+  { label: "Email", href: "mailto:nishant@careconnecthospital.com", Icon: Mail },
   { label: "Instagram", href: "https://instagram.com/", Icon: Instagram },
   { label: "LinkedIn", href: "https://linkedin.com/", Icon: Linkedin },
   { label: "YouTube", href: "https://youtube.com/", Icon: Youtube },
@@ -70,7 +70,7 @@ const Footer = () => {
                 <li>Mon – Sat · 9:00 – 20:00</li>
                 <li>Sunday · 10:00 – 14:00</li>
                 <li>24/7 Care Line Available</li>
-                <li>hello@careconnect.app</li>
+                <li>nishant@careconnecthospital.com</li>
               </ul>
             </div>
           </div>
