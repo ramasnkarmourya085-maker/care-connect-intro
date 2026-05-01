@@ -5,6 +5,7 @@ import showcase2 from "@/assets/showcase-iitbhu-2.jpeg";
 import cu1 from "@/assets/showcase-cu-1.png";
 import cu2 from "@/assets/showcase-cu-2.png";
 import cu3 from "@/assets/showcase-cu-3.png";
+import cuScifusion from "@/assets/showcase-cu-scifusion-2026.jpg";
 
 type EventItem = {
   image: string;
@@ -92,6 +93,13 @@ const showcases: ShowcaseBlock[] = [
         subtitle: "Where Disciplines Converge",
         description:
           "Engaging with judges, faculty, and fellow innovators at Chandigarh University. Currently in discussions for funding opportunities and future collaboration with the leadership of the university.",
+      },
+      {
+        image: cuScifusion,
+        title: "SciFusion Nexus 2026 — Group Photo",
+        subtitle: "Where Disciplines Converge & Ideas Come Alive",
+        description:
+          "A memorable group photo with participants, faculty, and dignitaries at SciFusion Nexus 2026, Chandigarh University — celebrating innovation, collaboration, and the spirit of bringing ideas to life.",
       },
     ],
     quote:
