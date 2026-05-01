@@ -74,11 +74,11 @@ const showcases: ShowcaseBlock[] = [
     ],
     gallery: [
       {
-        image: cu1,
-        title: "AI Conclave — AI for All",
-        subtitle: "Science, Society & Future",
+        image: cuScifusion,
+        title: "SciFusion Nexus 2026 — Group Photo",
+        subtitle: "Where Disciplines Converge & Ideas Come Alive",
         description:
-          "Care Connect was presented at the AI Conclave at Chandigarh University, an event bringing together innovators, researchers, and decision-makers shaping the future of AI in society.",
+          "A memorable group photo with participants, faculty, and dignitaries at SciFusion Nexus 2026, Chandigarh University — celebrating innovation, collaboration, and the spirit of bringing ideas to life.",
       },
       {
         image: cu2,
@@ -95,11 +95,11 @@ const showcases: ShowcaseBlock[] = [
           "Engaging with judges, faculty, and fellow innovators at Chandigarh University. Currently in discussions for funding opportunities and future collaboration with the leadership of the university.",
       },
       {
-        image: cuScifusion,
-        title: "SciFusion Nexus 2026 — Group Photo",
-        subtitle: "Where Disciplines Converge & Ideas Come Alive",
+        image: cu1,
+        title: "AI Conclave — AI for All",
+        subtitle: "Science, Society & Future",
         description:
-          "A memorable group photo with participants, faculty, and dignitaries at SciFusion Nexus 2026, Chandigarh University — celebrating innovation, collaboration, and the spirit of bringing ideas to life.",
+          "Care Connect was presented at the AI Conclave at Chandigarh University, an event bringing together innovators, researchers, and decision-makers shaping the future of AI in society.",
       },
     ],
     quote:
