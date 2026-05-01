@@ -1,11 +1,10 @@
-import { Mail, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Mail, Instagram, Linkedin } from "lucide-react";
 import logo from "@/assets/care-connect-logo.jpeg";
 
 const socials = [
   { label: "Email", href: "mailto:nishant@careconnecthospital.com", Icon: Mail },
   { label: "Instagram", href: "https://instagram.com/", Icon: Instagram },
   { label: "LinkedIn", href: "https://linkedin.com/", Icon: Linkedin },
-  { label: "YouTube", href: "https://youtube.com/", Icon: Youtube },
 ];
 
 const Footer = () => {
