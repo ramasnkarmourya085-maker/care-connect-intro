@@ -1,16 +1,10 @@
 import { useEffect, useState } from "react";
-import { Award, MapPin, Calendar, Sparkles, Users, Rocket, X } from "lucide-react";
+import { Award, MapPin, Calendar, Sparkles, Rocket, X } from "lucide-react";
 import showcase1 from "@/assets/showcase-iitbhu-1.jpeg";
 import showcase2 from "@/assets/showcase-iitbhu-2.jpeg";
 import cu1 from "@/assets/showcase-cu-1.png";
 import cu2 from "@/assets/showcase-cu-2.png";
 import cu3 from "@/assets/showcase-cu-3.png";
-import cu4 from "@/assets/showcase-cu-4.png";
-import cu5 from "@/assets/showcase-cu-5.png";
-import cu6 from "@/assets/showcase-cu-6.png";
-import cu7 from "@/assets/showcase-cu-7.png";
-import cu8 from "@/assets/showcase-cu-8.png";
-import cu9 from "@/assets/showcase-cu-9.jpeg";
 
 type EventItem = {
   image: string;
