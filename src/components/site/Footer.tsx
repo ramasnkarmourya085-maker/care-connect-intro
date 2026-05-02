@@ -3,7 +3,7 @@ import logo from "@/assets/care-connect-logo.jpeg";
 
 const socials = [
   { label: "Email", href: "mailto:nishant@careconnecthospital.com", Icon: Mail },
-  { label: "Instagram", href: "https://instagram.com/", Icon: Instagram },
+  { label: "Instagram", href: "https://www.instagram.com/careconnecthospital?igsh=MWN2OGNvMTViNW0wdA==", Icon: Instagram },
   { label: "LinkedIn", href: "https://linkedin.com/", Icon: Linkedin },
 ];
 
