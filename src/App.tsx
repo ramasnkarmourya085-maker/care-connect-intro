@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import SignIn from "./pages/SignIn.tsx";
 import { ThemeProvider } from "@/hooks/use-theme";
 import AuthGate from "@/components/site/AuthGate";
 
@@ -17,13 +18,19 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <AuthGate>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </AuthGate>
+        <Routes>
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route
+            path="/"
+            element={
+              <AuthGate>
+                <Index />
+              </AuthGate>
+            }
+          />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </BrowserRouter>
     </TooltipProvider>
     </ThemeProvider>
