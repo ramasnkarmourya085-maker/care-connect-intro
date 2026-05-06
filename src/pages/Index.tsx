@@ -7,6 +7,7 @@ import Workflow from "@/components/site/Workflow";
 import Showcase from "@/components/site/Showcase";
 import Cta from "@/components/site/TechStack";
 import Faq from "@/components/site/Faq";
+import Reviews from "@/components/site/Reviews";
 import Footer from "@/components/site/Footer";
 
 const Index = () => {
@@ -21,6 +22,7 @@ const Index = () => {
       <Showcase />
       <Faq />
       <Cta />
+      <Reviews />
       <Footer />
     </main>
   );
