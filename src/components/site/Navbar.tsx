@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { LogOut, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/site/ThemeToggle";
 import logo from "@/assets/care-connect-logo.jpeg";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
+import { useNavigate } from "react-router-dom";
 
 const links = [
   { href: "#about", label: "About" },
@@ -16,6 +19,14 @@ const links = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { toast } = useToast();
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    toast({ title: "Signed out", description: "You have been logged out." });
+    navigate("/sign-in", { replace: true });
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -57,6 +68,9 @@ const Navbar = () => {
           <Button variant="hero" size="sm" asChild>
             <a href="#contact">Book Appointment →</a>
           </Button>
+          <Button variant="ghostOutline" size="sm" onClick={handleLogout}>
+            <LogOut className="w-4 h-4" /> Logout
+          </Button>
         </div>
 
         <div className="md:hidden flex items-center gap-2">
@@ -87,6 +101,9 @@ const Navbar = () => {
             <a href="#contact" onClick={() => setOpen(false)}>
               Book Appointment →
             </a>
+          </Button>
+          <Button variant="ghostOutline" size="sm" onClick={() => { setOpen(false); handleLogout(); }}>
+            <LogOut className="w-4 h-4" /> Logout
           </Button>
         </div>
       )}
