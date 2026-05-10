@@ -68,6 +68,9 @@ const Navbar = () => {
           <Button variant="hero" size="sm" asChild>
             <a href="#contact">Book Appointment →</a>
           </Button>
+          <Button variant="ghostOutline" size="sm" onClick={handleLogout}>
+            <LogOut className="w-4 h-4" /> Logout
+          </Button>
         </div>
 
         <div className="md:hidden flex items-center gap-2">
