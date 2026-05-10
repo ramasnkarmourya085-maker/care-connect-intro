@@ -19,6 +19,14 @@ const links = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { toast } = useToast();
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    toast({ title: "Signed out", description: "You have been logged out." });
+    navigate("/sign-in", { replace: true });
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
