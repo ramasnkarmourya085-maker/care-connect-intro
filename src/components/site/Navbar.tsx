@@ -102,6 +102,9 @@ const Navbar = () => {
               Book Appointment →
             </a>
           </Button>
+          <Button variant="ghostOutline" size="sm" onClick={() => { setOpen(false); handleLogout(); }}>
+            <LogOut className="w-4 h-4" /> Logout
+          </Button>
         </div>
       )}
     </header>
