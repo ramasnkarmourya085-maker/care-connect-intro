@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Star, Sparkles, Loader2, ImagePlus, X } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { API_BASE_URL } from "@/lib/api";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -38,9 +39,7 @@ const StarRow = ({
       >
         <Star
           className={`${size} ${
-            n <= value
-              ? "fill-primary text-primary"
-              : "text-muted-foreground/40"
+            n <= value ? "fill-primary text-primary" : "text-muted-foreground/40"
           }`}
         />
       </button>
@@ -61,13 +60,16 @@ const Reviews = () => {
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
 
   const fetchReviews = async () => {
-    const { data, error } = await supabase
-      .from("reviews")
-      .select("*")
-      .order("created_at", { ascending: false })
-      .limit(50);
-    if (!error && data) setReviews(data as Review[]);
-    setLoading(false);
+    try {
+      const res = await fetch(`${API_BASE_URL}/api/reviews`);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = (await res.json()) as Review[];
+      setReviews(data);
+    } catch (err: any) {
+      console.error("Failed to load reviews:", err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -100,27 +102,29 @@ const Reviews = () => {
       toast({ title: "Please fill in your name and review.", variant: "destructive" });
       return;
     }
+
     setSubmitting(true);
     try {
-      let photo_url: string | null = null;
-      if (photo) {
-        const ext = photo.name.split(".").pop() || "jpg";
-        const path = `${crypto.randomUUID()}.${ext}`;
-        const { error: upErr } = await supabase.storage
-          .from("review-photos")
-          .upload(path, photo, { contentType: photo.type });
-        if (upErr) throw upErr;
-        const { data } = supabase.storage.from("review-photos").getPublicUrl(path);
-        photo_url = data.publicUrl;
-      }
+      const { data: sessionData } = await supabase.auth.getSession();
+      const token = sessionData.session?.access_token;
+      if (!token) throw new Error("Please sign in to post a review.");
 
-      const { error } = await supabase.from("reviews").insert({
-        name: trimmedName.slice(0, 80),
-        rating,
-        message: trimmedMsg.slice(0, 1000),
-        photo_url,
+      const fd = new FormData();
+      fd.append("name", trimmedName);
+      fd.append("rating", String(rating));
+      fd.append("message", trimmedMsg);
+      if (photo) fd.append("photo", photo);
+
+      const res = await fetch(`${API_BASE_URL}/api/reviews`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}` },
+        body: fd,
       });
-      if (error) throw error;
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.error || `HTTP ${res.status}`);
+      }
 
       toast({ title: "Thank you!", description: "Your review has been posted." });
       setName("");
@@ -170,7 +174,6 @@ const Reviews = () => {
           )}
         </div>
 
-        {/* Submit form */}
         <form
           onSubmit={handleSubmit}
           className="max-w-2xl mx-auto glass rounded-3xl p-6 md:p-8 space-y-5 mb-16"
@@ -234,7 +237,6 @@ const Reviews = () => {
           </div>
         </form>
 
-        {/* List */}
         <div className="max-w-5xl mx-auto">
           {loading ? (
             <div className="flex justify-center py-12">
