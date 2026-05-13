@@ -284,6 +284,7 @@ const Reviews = () => {
             </div>
           </div>
         </form>
+        )}
 
         <div className="max-w-5xl mx-auto">
           {loading ? (
