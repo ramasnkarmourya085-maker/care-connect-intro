@@ -120,6 +120,14 @@ const Reviews = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!session) {
+      toast({
+        title: "Sign in required",
+        description: "Review post karne ke liye pehle sign in karein.",
+      });
+      navigate("/sign-in", { state: { from: { pathname: "/", hash: "#reviews" } } });
+      return;
+    }
     const trimmedName = name.trim();
     const trimmedMsg = message.trim();
     if (!trimmedName || !trimmedMsg) {
