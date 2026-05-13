@@ -7,7 +7,6 @@ import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import SignIn from "./pages/SignIn.tsx";
 import { ThemeProvider } from "@/hooks/use-theme";
-import AuthGate from "@/components/site/AuthGate";
 
 const queryClient = new QueryClient();
 
@@ -20,14 +19,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/sign-in" element={<SignIn />} />
-          <Route
-            path="/"
-            element={
-              <AuthGate>
-                <Index />
-              </AuthGate>
-            }
-          />
+          <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

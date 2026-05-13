@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import { Star, Sparkles, Loader2, ImagePlus, X } from "lucide-react";
+import { Star, Sparkles, Loader2, ImagePlus, X, LogIn, ShieldCheck } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import type { Session } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
 import { API_BASE_URL } from "@/lib/api";
 import { Button } from "@/components/ui/button";
@@ -49,6 +51,8 @@ const StarRow = ({
 
 const Reviews = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
+  const [session, setSession] = useState<Session | null>(null);
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
@@ -58,6 +62,26 @@ const Reviews = () => {
   const [message, setMessage] = useState("");
   const [photo, setPhoto] = useState<File | null>(null);
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
+
+  useEffect(() => {
+    const { data: sub } = supabase.auth.onAuthStateChange((_e, s) => {
+      setSession(s);
+      if (s?.user && !name) {
+        const meta = s.user.user_metadata as { full_name?: string; name?: string } | undefined;
+        setName(meta?.full_name || meta?.name || s.user.email?.split("@")[0] || "");
+      }
+    });
+    supabase.auth.getSession().then(({ data }) => {
+      setSession(data.session);
+      const u = data.session?.user;
+      if (u && !name) {
+        const meta = u.user_metadata as { full_name?: string; name?: string } | undefined;
+        setName(meta?.full_name || meta?.name || u.email?.split("@")[0] || "");
+      }
+    });
+    return () => sub.subscription.unsubscribe();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const fetchReviews = async () => {
     try {
@@ -96,6 +120,14 @@ const Reviews = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!session) {
+      toast({
+        title: "Sign in required",
+        description: "Review post karne ke liye pehle sign in karein.",
+      });
+      navigate("/sign-in", { state: { from: { pathname: "/", hash: "#reviews" } } });
+      return;
+    }
     const trimmedName = name.trim();
     const trimmedMsg = message.trim();
     if (!trimmedName || !trimmedMsg) {
@@ -174,6 +206,22 @@ const Reviews = () => {
           )}
         </div>
 
+        {!session ? (
+          <div className="max-w-2xl mx-auto glass rounded-3xl p-8 md:p-10 mb-16 text-center space-y-5">
+            <div className="mx-auto w-12 h-12 rounded-2xl bg-primary/15 ring-1 ring-primary/40 grid place-items-center">
+              <ShieldCheck className="w-6 h-6 text-primary" />
+            </div>
+            <h3 className="font-display text-2xl font-bold">Sign in to share your review</h3>
+            <p className="text-muted-foreground text-sm">
+              Spam rokne ke liye review post karne se pehle account chahiye. Reading ke liye sign in zaroori nahi.
+            </p>
+            <Button variant="hero" size="lg" asChild>
+              <Link to="/sign-in" state={{ from: { pathname: "/", hash: "#reviews" } }}>
+                <LogIn className="w-4 h-4" /> Sign in to post a review
+              </Link>
+            </Button>
+          </div>
+        ) : (
         <form
           onSubmit={handleSubmit}
           className="max-w-2xl mx-auto glass rounded-3xl p-6 md:p-8 space-y-5 mb-16"
@@ -236,6 +284,7 @@ const Reviews = () => {
             </div>
           </div>
         </form>
+        )}
 
         <div className="max-w-5xl mx-auto">
           {loading ? (
