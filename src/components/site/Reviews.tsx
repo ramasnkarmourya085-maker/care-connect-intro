@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import { Star, Sparkles, Loader2, ImagePlus, X } from "lucide-react";
+import { Star, Sparkles, Loader2, ImagePlus, X, LogIn, ShieldCheck } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import type { Session } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
 import { API_BASE_URL } from "@/lib/api";
 import { Button } from "@/components/ui/button";
