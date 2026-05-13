@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { LogOut, Menu, X } from "lucide-react";
+import { LogOut, Menu, X, LogIn, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/site/ThemeToggle";
 import logo from "@/assets/care-connect-logo.jpeg";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import type { Session } from "@supabase/supabase-js";
 
 const links = [
   { href: "#about", label: "About" },
@@ -13,19 +14,27 @@ const links = [
   { href: "#why", label: "Why Us" },
   { href: "#workflow", label: "Your Visit" },
   { href: "#showcase", label: "Showcase" },
+  { href: "#reviews", label: "Reviews" },
   { href: "#faq", label: "FAQ" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [session, setSession] = useState<Session | null>(null);
   const { toast } = useToast();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const { data: sub } = supabase.auth.onAuthStateChange((_e, s) => setSession(s));
+    supabase.auth.getSession().then(({ data }) => setSession(data.session));
+    return () => sub.subscription.unsubscribe();
+  }, []);
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
     toast({ title: "Signed out", description: "You have been logged out." });
-    navigate("/sign-in", { replace: true });
+    navigate("/", { replace: true });
   };
 
   useEffect(() => {
@@ -33,6 +42,41 @@ const Navbar = () => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const userLabel =
+    (session?.user?.user_metadata?.full_name as string | undefined) ||
+    (session?.user?.user_metadata?.name as string | undefined) ||
+    session?.user?.email ||
+    "";
+
+  const AuthArea = ({ onAction }: { onAction?: () => void }) =>
+    session ? (
+      <>
+        <span
+          className="hidden lg:inline-flex items-center gap-2 text-xs px-3 py-1.5 rounded-full glass text-muted-foreground max-w-[180px] truncate"
+          title={userLabel}
+        >
+          <User className="w-3.5 h-3.5 text-primary shrink-0" />
+          <span className="truncate">{userLabel}</span>
+        </span>
+        <Button
+          variant="ghostOutline"
+          size="sm"
+          onClick={() => {
+            onAction?.();
+            handleLogout();
+          }}
+        >
+          <LogOut className="w-4 h-4" /> Logout
+        </Button>
+      </>
+    ) : (
+      <Button variant="ghostOutline" size="sm" asChild>
+        <Link to="/sign-in" onClick={onAction}>
+          <LogIn className="w-4 h-4" /> Sign in
+        </Link>
+      </Button>
+    );
 
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1.5rem)] max-w-6xl">
@@ -50,13 +94,10 @@ const Navbar = () => {
           </span>
         </a>
 
-        <ul className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
+        <ul className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
           {links.map((l) => (
             <li key={l.href}>
-              <a
-                href={l.href}
-                className="hover:text-foreground transition-colors"
-              >
+              <a href={l.href} className="hover:text-foreground transition-colors">
                 {l.label}
               </a>
             </li>
@@ -65,12 +106,7 @@ const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-3">
           <ThemeToggle />
-          <Button variant="hero" size="sm" asChild>
-            <a href="#contact">Book Appointment →</a>
-          </Button>
-          <Button variant="ghostOutline" size="sm" onClick={handleLogout}>
-            <LogOut className="w-4 h-4" /> Logout
-          </Button>
+          <AuthArea />
         </div>
 
         <div className="md:hidden flex items-center gap-2">
@@ -97,14 +133,13 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
-          <Button variant="hero" size="sm" asChild>
-            <a href="#contact" onClick={() => setOpen(false)}>
-              Book Appointment →
-            </a>
-          </Button>
-          <Button variant="ghostOutline" size="sm" onClick={() => { setOpen(false); handleLogout(); }}>
-            <LogOut className="w-4 h-4" /> Logout
-          </Button>
+          {session && (
+            <div className="px-3 py-2 text-xs text-muted-foreground inline-flex items-center gap-2">
+              <User className="w-3.5 h-3.5 text-primary" />
+              <span className="truncate">{userLabel}</span>
+            </div>
+          )}
+          <AuthArea onAction={() => setOpen(false)} />
         </div>
       )}
     </header>
