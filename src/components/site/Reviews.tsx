@@ -51,6 +51,8 @@ const StarRow = ({
 
 const Reviews = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
+  const [session, setSession] = useState<Session | null>(null);
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
@@ -60,6 +62,26 @@ const Reviews = () => {
   const [message, setMessage] = useState("");
   const [photo, setPhoto] = useState<File | null>(null);
   const [photoPreview, setPhotoPreview] = useState<string | null>(null);
+
+  useEffect(() => {
+    const { data: sub } = supabase.auth.onAuthStateChange((_e, s) => {
+      setSession(s);
+      if (s?.user && !name) {
+        const meta = s.user.user_metadata as { full_name?: string; name?: string } | undefined;
+        setName(meta?.full_name || meta?.name || s.user.email?.split("@")[0] || "");
+      }
+    });
+    supabase.auth.getSession().then(({ data }) => {
+      setSession(data.session);
+      const u = data.session?.user;
+      if (u && !name) {
+        const meta = u.user_metadata as { full_name?: string; name?: string } | undefined;
+        setName(meta?.full_name || meta?.name || u.email?.split("@")[0] || "");
+      }
+    });
+    return () => sub.subscription.unsubscribe();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const fetchReviews = async () => {
     try {
