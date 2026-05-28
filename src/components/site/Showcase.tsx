@@ -10,6 +10,7 @@ import cuAiConclaveVideo from "@/assets/showcase-cu-ai-conclave.mp4";
 
 type EventItem = {
   image: string;
+  video?: string;
   title: string;
   subtitle: string;
   description: string;
