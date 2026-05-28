@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
-import { Award, MapPin, Calendar, Sparkles, Rocket, X } from "lucide-react";
+import { Award, MapPin, Calendar, Sparkles, Rocket, X, Play } from "lucide-react";
 import showcase1 from "@/assets/showcase-iitbhu-1.jpeg";
 import showcase2 from "@/assets/showcase-iitbhu-2.jpeg";
 import cu1 from "@/assets/showcase-cu-1.png";
 import cu2 from "@/assets/showcase-cu-2.png";
 import cu3 from "@/assets/showcase-cu-3.png";
 import cuScifusion from "@/assets/showcase-cu-scifusion-2026.jpg";
+import cuAiConclaveVideo from "@/assets/showcase-cu-ai-conclave.mp4";
 
 type EventItem = {
   image: string;
+  video?: string;
   title: string;
   subtitle: string;
   description: string;
@@ -96,6 +98,7 @@ const showcases: ShowcaseBlock[] = [
       },
       {
         image: cu1,
+        video: cuAiConclaveVideo,
         title: "AI Conclave — AI for All",
         subtitle: "Science, Society & Future",
         description:
@@ -109,9 +112,9 @@ const showcases: ShowcaseBlock[] = [
 ];
 
 const Showcase = () => {
-  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(
-    null
-  );
+  const [lightbox, setLightbox] = useState<
+    { type: "image"; src: string; alt: string } | { type: "video"; src: string; alt: string } | null
+  >(null);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -169,17 +172,42 @@ const Showcase = () => {
                 >
                   <button
                     type="button"
-                    onClick={() => setLightbox({ src: e.image, alt: e.title })}
+                    onClick={() =>
+                      setLightbox(
+                        e.video
+                          ? { type: "video", src: e.video, alt: e.title }
+                          : { type: "image", src: e.image, alt: e.title }
+                      )
+                    }
                     className="relative aspect-[4/3] overflow-hidden block w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                    aria-label={`Open image: ${e.title}`}
+                    aria-label={e.video ? `Play video: ${e.title}` : `Open image: ${e.title}`}
                   >
-                    <img
-                      src={e.image}
-                      alt={e.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
+                    {e.video ? (
+                      <video
+                        src={e.video}
+                        poster={e.image}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="metadata"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    ) : (
+                      <img
+                        src={e.image}
+                        alt={e.title}
+                        loading="lazy"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+                    {e.video && (
+                      <div className="absolute top-3 right-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-background/70 backdrop-blur text-[10px] uppercase tracking-widest text-foreground ring-1 ring-border">
+                        <Play className="w-3 h-3 text-primary" fill="currentColor" />
+                        Tap for sound
+                      </div>
+                    )}
                     <div className="absolute bottom-4 left-4 right-4 text-left">
                       <p className="text-xs uppercase tracking-widest text-primary mb-1">
                         {e.subtitle}
@@ -209,7 +237,7 @@ const Showcase = () => {
                       key={i}
                       type="button"
                       onClick={() =>
-                        setLightbox({ src: img.image, alt: img.alt })
+                        setLightbox({ type: "image", src: img.image, alt: img.alt })
                       }
                       className="group relative aspect-square overflow-hidden rounded-2xl glass hover-lift focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                       aria-label={`Open image: ${img.alt}`}
@@ -258,12 +286,23 @@ const Showcase = () => {
           >
             <X className="w-5 h-5" />
           </button>
-          <img
-            src={lightbox.src}
-            alt={lightbox.alt}
-            onClick={(e) => e.stopPropagation()}
-            className="max-w-[95vw] max-h-[90vh] object-contain rounded-2xl shadow-2xl"
-          />
+          {lightbox.type === "video" ? (
+            <video
+              src={lightbox.src}
+              autoPlay
+              controls
+              playsInline
+              onClick={(e) => e.stopPropagation()}
+              className="max-w-[95vw] max-h-[90vh] rounded-2xl shadow-2xl bg-black"
+            />
+          ) : (
+            <img
+              src={lightbox.src}
+              alt={lightbox.alt}
+              onClick={(e) => e.stopPropagation()}
+              className="max-w-[95vw] max-h-[90vh] object-contain rounded-2xl shadow-2xl"
+            />
+          )}
         </div>
       )}
     </section>
