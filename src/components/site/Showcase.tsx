@@ -7,6 +7,9 @@ import cu2 from "@/assets/showcase-cu-2.png";
 import cu3 from "@/assets/showcase-cu-3.png";
 import cuScifusion from "@/assets/showcase-cu-scifusion-2026.jpg";
 import cuAiConclaveVideo from "@/assets/showcase-cu-ai-conclave.mp4";
+import goel1 from "@/assets/showcase-goel-1.png";
+import goel2 from "@/assets/showcase-goel-2.jpeg";
+
 
 type EventItem = {
   image: string;
