@@ -7,6 +7,9 @@ import cu2 from "@/assets/showcase-cu-2.png";
 import cu3 from "@/assets/showcase-cu-3.png";
 import cuScifusion from "@/assets/showcase-cu-scifusion-2026.jpg";
 import cuAiConclaveVideo from "@/assets/showcase-cu-ai-conclave.mp4";
+import goel1 from "@/assets/showcase-goel-1.png";
+import goel2 from "@/assets/showcase-goel-2.jpeg";
+
 
 type EventItem = {
   image: string;
@@ -109,7 +112,40 @@ const showcases: ShowcaseBlock[] = [
       "We believe this is just the beginning — with the right support, Care Connect can create a meaningful impact in healthcare.",
     quoteAuthor: "— Nishant Pandey, Founder · Praveen Kumar Maurya, Co-Founder",
   },
+  {
+    id: "goel-ayurvedic",
+    badge: "Institutional Meeting",
+    title: "Insightful Meeting at",
+    highlight: "Goel Ayurvedic Medical College",
+    intro:
+      "An insightful and productive meeting with the leadership of Goel Ayurvedic Medical College and Hospital — discussing Care Connect, recording valuable feedback, and exploring how technology can strengthen patient care in Ayurvedic practice.",
+    stats: [
+      { icon: MapPin, label: "Venue", value: "Goel Ayurvedic Medical College & Hospital" },
+      { icon: Award, label: "Reviewed By", value: "Principal · Academic Dean · HOD" },
+      { icon: Calendar, label: "Outcome", value: "Recorded Reviews & Discussion" },
+    ],
+    gallery: [
+      {
+        image: goel1,
+        title: "Live Demo with the Principal",
+        subtitle: "Dr. Abhinath Chandra Srivastava",
+        description:
+          "Walking the Principal, Dr. Abhinath Chandra Srivastava, through Care Connect — showcasing patient workflows, dashboards, and how the platform can support hospital coordination. The session received warm engagement and constructive feedback.",
+      },
+      {
+        image: goel2,
+        title: "Discussion with Academic Leadership",
+        subtitle: "Dr. Sunil Gupta & Dr. AK Singh",
+        description:
+          "A productive conversation with Academic Dean Dr. Sunil Gupta and HOD Dr. AK Singh. We recorded their reviews on Care Connect and discussed how the platform can integrate with academic and clinical needs of the institution.",
+      },
+    ],
+    quote:
+      "An insightful and productive meeting — encouraging feedback from respected academic and medical leaders.",
+    quoteAuthor: "— Team Care Connect",
+  },
 ];
+
 
 const Showcase = () => {
   const [lightbox, setLightbox] = useState<
