@@ -98,6 +98,7 @@ const showcases: ShowcaseBlock[] = [
       },
       {
         image: cu1,
+        video: cuAiConclaveVideo,
         title: "AI Conclave — AI for All",
         subtitle: "Science, Society & Future",
         description:
