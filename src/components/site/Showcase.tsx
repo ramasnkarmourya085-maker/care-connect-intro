@@ -286,12 +286,23 @@ const Showcase = () => {
           >
             <X className="w-5 h-5" />
           </button>
-          <img
-            src={lightbox.src}
-            alt={lightbox.alt}
-            onClick={(e) => e.stopPropagation()}
-            className="max-w-[95vw] max-h-[90vh] object-contain rounded-2xl shadow-2xl"
-          />
+          {lightbox.type === "video" ? (
+            <video
+              src={lightbox.src}
+              autoPlay
+              controls
+              playsInline
+              onClick={(e) => e.stopPropagation()}
+              className="max-w-[95vw] max-h-[90vh] rounded-2xl shadow-2xl bg-black"
+            />
+          ) : (
+            <img
+              src={lightbox.src}
+              alt={lightbox.alt}
+              onClick={(e) => e.stopPropagation()}
+              className="max-w-[95vw] max-h-[90vh] object-contain rounded-2xl shadow-2xl"
+            />
+          )}
         </div>
       )}
     </section>
