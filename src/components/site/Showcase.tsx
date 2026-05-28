@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Award, MapPin, Calendar, Sparkles, Rocket, X } from "lucide-react";
+import { Award, MapPin, Calendar, Sparkles, Rocket, X, Play } from "lucide-react";
 import showcase1 from "@/assets/showcase-iitbhu-1.jpeg";
 import showcase2 from "@/assets/showcase-iitbhu-2.jpeg";
 import cu1 from "@/assets/showcase-cu-1.png";
 import cu2 from "@/assets/showcase-cu-2.png";
 import cu3 from "@/assets/showcase-cu-3.png";
 import cuScifusion from "@/assets/showcase-cu-scifusion-2026.jpg";
+import cuAiConclaveVideo from "@/assets/showcase-cu-ai-conclave.mp4";
 
 type EventItem = {
   image: string;
