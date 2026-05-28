@@ -109,8 +109,8 @@ const showcases: ShowcaseBlock[] = [
       },
     ],
     quote:
-      "An insightful and productive meeting — encouraging feedback from respected academic and medical leaders.",
-    quoteAuthor: "— Team Care Connect",
+      "We believe this is just the beginning — with the right support, Care Connect can create a meaningful impact in healthcare.",
+    quoteAuthor: "— Nishant Pandey, Founder · Praveen Kumar Maurya, Co-Founder",
   },
   {
     id: "goel-ayurvedic",
