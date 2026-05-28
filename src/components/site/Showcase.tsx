@@ -237,7 +237,7 @@ const Showcase = () => {
                       key={i}
                       type="button"
                       onClick={() =>
-                        setLightbox({ src: img.image, alt: img.alt })
+                        setLightbox({ type: "image", src: img.image, alt: img.alt })
                       }
                       className="group relative aspect-square overflow-hidden rounded-2xl glass hover-lift focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                       aria-label={`Open image: ${img.alt}`}
