@@ -112,9 +112,9 @@ const showcases: ShowcaseBlock[] = [
 ];
 
 const Showcase = () => {
-  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(
-    null
-  );
+  const [lightbox, setLightbox] = useState<
+    { type: "image"; src: string; alt: string } | { type: "video"; src: string; alt: string } | null
+  >(null);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
