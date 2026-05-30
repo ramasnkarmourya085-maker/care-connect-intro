@@ -76,6 +76,7 @@ app.get("/api/reviews", async (_req, res) => {
   res.json(
     reviews.map((r) => ({
       id: r._id.toString(),
+      user_id: r.userId || null,
       name: r.name,
       rating: r.rating,
       message: r.message,
