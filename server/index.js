@@ -122,6 +122,7 @@ app.post("/api/reviews", requireAuth, upload.single("photo"), async (req, res) =
 
     res.status(201).json({
       id: doc._id.toString(),
+      user_id: doc.userId,
       name: doc.name,
       rating: doc.rating,
       message: doc.message,
