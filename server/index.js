@@ -76,6 +76,7 @@ app.get("/api/reviews", async (_req, res) => {
   res.json(
     reviews.map((r) => ({
       id: r._id.toString(),
+      user_id: r.userId || null,
       name: r.name,
       rating: r.rating,
       message: r.message,
@@ -121,6 +122,7 @@ app.post("/api/reviews", requireAuth, upload.single("photo"), async (req, res) =
 
     res.status(201).json({
       id: doc._id.toString(),
+      user_id: doc.userId,
       name: doc.name,
       rating: doc.rating,
       message: doc.message,

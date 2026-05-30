@@ -11,6 +11,7 @@ import { useToast } from "@/hooks/use-toast";
 
 type Review = {
   id: string;
+  user_id?: string | null;
   name: string;
   rating: number;
   message: string;
@@ -285,6 +286,52 @@ const Reviews = () => {
           </div>
         </form>
         )}
+
+        {session && (() => {
+          const myReviews = reviews.filter((r) => r.user_id && r.user_id === session.user.id);
+          if (myReviews.length === 0) return null;
+          return (
+            <div className="max-w-5xl mx-auto mb-12">
+              <div className="flex items-center gap-2 mb-5">
+                <ShieldCheck className="w-4 h-4 text-primary" />
+                <h3 className="font-display text-lg font-semibold">
+                  Your reviews <span className="text-muted-foreground font-normal">({myReviews.length})</span>
+                </h3>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                {myReviews.map((r) => (
+                  <article
+                    key={`mine-${r.id}`}
+                    className="glass rounded-3xl p-6 hover-lift flex flex-col gap-3 ring-1 ring-primary/40"
+                  >
+                    <div className="flex items-center justify-between">
+                      <h4 className="font-display font-semibold">{r.name}</h4>
+                      <StarRow value={r.rating} size="w-4 h-4" />
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-wrap">
+                      {r.message}
+                    </p>
+                    {r.photo_url && (
+                      <img
+                        src={r.photo_url}
+                        alt={`Photo by ${r.name}`}
+                        loading="lazy"
+                        className="w-full h-48 object-cover rounded-2xl"
+                      />
+                    )}
+                    <p className="text-xs text-muted-foreground mt-auto">
+                      {new Date(r.created_at).toLocaleDateString(undefined, {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      })}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          );
+        })()}
 
         <div className="max-w-5xl mx-auto">
           {loading ? (
