@@ -11,6 +11,7 @@ import { useToast } from "@/hooks/use-toast";
 
 type Review = {
   id: string;
+  user_id?: string | null;
   name: string;
   rating: number;
   message: string;
