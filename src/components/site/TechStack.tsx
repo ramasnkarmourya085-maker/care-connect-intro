@@ -4,14 +4,14 @@ import { Button } from "@/components/ui/button";
 
 const Cta = () => {
   return (
-    <section className="relative py-28 px-6">
+    <section className="relative py-14 md:py-28 px-4 md:px-6">
       <div className="container max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="glass rounded-[2.5rem] px-8 md:px-16 py-16 md:py-24 text-center relative overflow-hidden"
+          className="glass rounded-3xl md:rounded-[2.5rem] px-5 md:px-16 py-10 md:py-24 text-center relative overflow-hidden"
         >
           <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-primary/15 blur-[120px] pointer-events-none" />
 
