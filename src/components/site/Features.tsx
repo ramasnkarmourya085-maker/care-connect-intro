@@ -91,18 +91,18 @@ const Features = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.06 }}
-                className="glass rounded-3xl p-6 hover-lift relative overflow-hidden group"
+                className="glass rounded-2xl md:rounded-3xl p-4 md:p-6 hover-lift relative overflow-hidden group"
               >
                 <div className="relative">
                   <div
-                    className={`w-12 h-12 rounded-2xl grid place-items-center ${f.iconBg}`}
+                    className={`w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl grid place-items-center ${f.iconBg}`}
                   >
-                    <Icon className="w-6 h-6" strokeWidth={2.2} />
+                    <Icon className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2.2} />
                   </div>
-                  <h3 className="mt-5 font-display text-xl font-bold">
+                  <h3 className="mt-3 md:mt-5 font-display text-base md:text-xl font-bold">
                     {f.title}
                   </h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  <p className="mt-1.5 md:mt-2 text-xs md:text-sm text-muted-foreground leading-relaxed">
                     {f.desc}
                   </p>
                 </div>
