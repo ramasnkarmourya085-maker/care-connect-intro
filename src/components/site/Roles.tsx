@@ -43,25 +43,25 @@ const reasons = [
 
 const Roles = () => {
   return (
-    <section id="why" className="relative py-28 px-6">
+    <section id="why" className="relative py-14 md:py-28 px-4 md:px-6">
       <div className="container max-w-6xl">
-        <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
+        <div className="flex items-end justify-between flex-wrap gap-4 md:gap-6 mb-8 md:mb-14">
           <div>
-            <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
+            <p className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3 md:mb-4">
               / Why Choose Us
             </p>
-            <h2 className="font-display font-bold text-4xl md:text-6xl leading-tight max-w-2xl">
+            <h2 className="font-display font-bold text-[1.7rem] sm:text-4xl md:text-6xl leading-tight max-w-2xl">
               The standard of care{" "}
               <span className="italic text-gradient">you've been waiting for.</span>
             </h2>
           </div>
-          <p className="text-muted-foreground max-w-sm">
+          <p className="text-sm md:text-base text-muted-foreground max-w-sm">
             Six quiet promises that shape every consultation, every diagnosis
             and every follow-up at Care Connect.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
           {reasons.map((r, i) => {
             const Icon = r.icon;
             return (
