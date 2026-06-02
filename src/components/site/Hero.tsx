@@ -77,7 +77,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
-          className="mt-20 flex flex-col items-center gap-2 text-xs text-muted-foreground"
+          className="mt-12 md:mt-20 flex flex-col items-center gap-2 text-xs text-muted-foreground"
         >
           <span className="tracking-[0.3em] uppercase">Scroll</span>
           <ChevronDown className="w-4 h-4 animate-scroll-hint" />
