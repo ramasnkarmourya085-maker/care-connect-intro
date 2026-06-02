@@ -28,14 +28,14 @@ const Workflow = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.05 }}
-              className="glass rounded-3xl p-7 hover-lift flex gap-5"
+              className="glass rounded-2xl md:rounded-3xl p-4 md:p-7 hover-lift flex gap-4 md:gap-5"
             >
-              <span className="font-display text-5xl font-bold text-gradient leading-none">
+              <span className="font-display text-3xl md:text-5xl font-bold text-gradient leading-none">
                 {s.n}
               </span>
               <div>
-                <h3 className="font-display text-2xl font-bold">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                <h3 className="font-display text-lg md:text-2xl font-bold">{s.title}</h3>
+                <p className="mt-1.5 md:mt-2 text-xs md:text-sm text-muted-foreground leading-relaxed">
                   {s.desc}
                 </p>
               </div>
