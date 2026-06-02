@@ -75,7 +75,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-14 pt-8 border-t border-border/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+        <div className="mt-10 md:mt-14 pt-6 md:pt-8 border-t border-border/60 flex flex-col sm:flex-row items-center justify-between gap-3 md:gap-4 text-[11px] md:text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} Care Connect. All rights reserved.</p>
           <p className="tracking-[0.2em] uppercase">Care You Trust · Comfort You Deserve</p>
         </div>
