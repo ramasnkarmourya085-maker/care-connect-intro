@@ -11,13 +11,13 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      className="relative mt-10 mx-3 md:mx-6 rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-[hsl(230_60%_8%)] to-[hsl(230_70%_4%)] border border-border/60"
+      className="relative mt-8 mx-3 md:mx-6 rounded-3xl md:rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-[hsl(230_60%_8%)] to-[hsl(230_70%_4%)] border border-border/60"
     >
       <div className="absolute -top-32 -left-32 w-[400px] h-[400px] rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
       <div className="absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full bg-accent/10 blur-[120px] pointer-events-none" />
 
-      <div className="relative px-6 md:px-12 py-16">
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+      <div className="relative px-5 md:px-12 py-10 md:py-16">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
           <div>
             <a href="#top" className="inline-flex items-center gap-3 mb-6">
               <span className="grid place-items-center w-12 h-12 rounded-2xl overflow-hidden bg-background ring-1 ring-primary/40">
