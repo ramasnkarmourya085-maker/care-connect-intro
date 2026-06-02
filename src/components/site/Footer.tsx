@@ -28,12 +28,12 @@ const Footer = () => {
               </span>
             </a>
 
-            <p className="max-w-md text-muted-foreground leading-relaxed">
+            <p className="max-w-md text-sm md:text-base text-muted-foreground leading-relaxed">
               Premium healthcare, designed around you. Quiet spaces, expert
               doctors and care that always feels personal.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 md:mt-8 flex flex-wrap gap-2 md:gap-3">
               {socials.map(({ label, href, Icon }) => (
                 <a
                   key={label}
