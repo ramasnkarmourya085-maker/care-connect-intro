@@ -253,8 +253,8 @@ const Showcase = () => {
                       </h3>
                     </div>
                   </button>
-                  <div className="p-6">
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                  <div className="p-4 md:p-6">
+                    <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
                       {e.description}
                     </p>
                   </div>
