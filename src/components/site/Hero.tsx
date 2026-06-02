@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section
       id="top"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20"
+      className="relative min-h-[88vh] md:min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-12 md:pt-32 md:pb-20"
     >
       {/* background image */}
       <img
@@ -23,12 +23,12 @@ const Hero = () => {
       <div className="absolute top-1/3 -left-32 w-[500px] h-[500px] rounded-full bg-primary/20 blur-[120px] animate-pulse-glow" />
       <div className="absolute bottom-0 -right-32 w-[500px] h-[500px] rounded-full bg-accent/15 blur-[140px] animate-pulse-glow" />
 
-      <div className="relative z-10 container max-w-5xl px-6 text-center">
+      <div className="relative z-10 container max-w-5xl px-4 md:px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
+          className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full glass mb-5 md:mb-8"
         >
           <Sparkles className="w-4 h-4 text-primary" strokeWidth={2.5} />
           <span className="text-xs tracking-[0.25em] uppercase text-muted-foreground">
@@ -40,7 +40,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="font-display font-bold text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight"
+          className="font-display font-bold text-[2rem] sm:text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight"
         >
           Care You Trust.
           <br />
@@ -51,7 +51,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-8 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground leading-relaxed"
+          className="mt-5 md:mt-8 max-w-2xl mx-auto text-sm md:text-lg text-muted-foreground leading-relaxed"
         >
           A modern healthcare experience built around you — expert doctors,
           quiet spaces and quietly powerful technology, all under one roof.
@@ -61,7 +61,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="mt-7 md:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4"
         >
           <Button variant="hero" size="lg" asChild>
             <a href="#contact">
@@ -77,7 +77,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}
-          className="mt-20 flex flex-col items-center gap-2 text-xs text-muted-foreground"
+          className="mt-12 md:mt-20 flex flex-col items-center gap-2 text-xs text-muted-foreground"
         >
           <span className="tracking-[0.3em] uppercase">Scroll</span>
           <ChevronDown className="w-4 h-4 animate-scroll-hint" />

@@ -11,16 +11,16 @@ const steps = [
 
 const Workflow = () => {
   return (
-    <section id="workflow" className="relative py-28 px-6">
+    <section id="workflow" className="relative py-14 md:py-28 px-4 md:px-6">
       <div className="container max-w-6xl">
-        <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
+        <p className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3 md:mb-4">
           / Your Visit
         </p>
-        <h2 className="font-display font-bold text-4xl md:text-6xl leading-tight max-w-3xl mb-16">
+        <h2 className="font-display font-bold text-[1.7rem] sm:text-4xl md:text-6xl leading-tight max-w-3xl mb-8 md:mb-16">
           Six simple steps. <span className="italic text-gradient">Zero stress.</span>
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-5">
+        <div className="grid sm:grid-cols-2 gap-3 md:gap-5">
           {steps.map((s, i) => (
             <motion.div
               key={s.n}
@@ -28,14 +28,14 @@ const Workflow = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.05 }}
-              className="glass rounded-3xl p-7 hover-lift flex gap-5"
+              className="glass rounded-2xl md:rounded-3xl p-4 md:p-7 hover-lift flex gap-4 md:gap-5"
             >
-              <span className="font-display text-5xl font-bold text-gradient leading-none">
+              <span className="font-display text-3xl md:text-5xl font-bold text-gradient leading-none">
                 {s.n}
               </span>
               <div>
-                <h3 className="font-display text-2xl font-bold">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                <h3 className="font-display text-lg md:text-2xl font-bold">{s.title}</h3>
+                <p className="mt-1.5 md:mt-2 text-xs md:text-sm text-muted-foreground leading-relaxed">
                   {s.desc}
                 </p>
               </div>

@@ -11,13 +11,13 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      className="relative mt-10 mx-3 md:mx-6 rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-[hsl(230_60%_8%)] to-[hsl(230_70%_4%)] border border-border/60"
+      className="relative mt-8 mx-3 md:mx-6 rounded-3xl md:rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-[hsl(230_60%_8%)] to-[hsl(230_70%_4%)] border border-border/60"
     >
       <div className="absolute -top-32 -left-32 w-[400px] h-[400px] rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
       <div className="absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full bg-accent/10 blur-[120px] pointer-events-none" />
 
-      <div className="relative px-6 md:px-12 py-16">
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+      <div className="relative px-5 md:px-12 py-10 md:py-16">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
           <div>
             <a href="#top" className="inline-flex items-center gap-3 mb-6">
               <span className="grid place-items-center w-12 h-12 rounded-2xl overflow-hidden bg-background ring-1 ring-primary/40">
@@ -28,12 +28,12 @@ const Footer = () => {
               </span>
             </a>
 
-            <p className="max-w-md text-muted-foreground leading-relaxed">
+            <p className="max-w-md text-sm md:text-base text-muted-foreground leading-relaxed">
               Premium healthcare, designed around you. Quiet spaces, expert
               doctors and care that always feels personal.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-6 md:mt-8 flex flex-wrap gap-2 md:gap-3">
               {socials.map(({ label, href, Icon }) => (
                 <a
                   key={label}
@@ -52,7 +52,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-10">
+          <div className="grid grid-cols-2 gap-6 md:gap-10">
             <div>
               <h4 className="font-semibold mb-4 text-sm">Explore</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
@@ -75,7 +75,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-14 pt-8 border-t border-border/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+        <div className="mt-10 md:mt-14 pt-6 md:pt-8 border-t border-border/60 flex flex-col sm:flex-row items-center justify-between gap-3 md:gap-4 text-[11px] md:text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} Care Connect. All rights reserved.</p>
           <p className="tracking-[0.2em] uppercase">Care You Trust · Comfort You Deserve</p>
         </div>

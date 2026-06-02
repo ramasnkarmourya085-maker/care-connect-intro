@@ -43,25 +43,25 @@ const reasons = [
 
 const Roles = () => {
   return (
-    <section id="why" className="relative py-28 px-6">
+    <section id="why" className="relative py-14 md:py-28 px-4 md:px-6">
       <div className="container max-w-6xl">
-        <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
+        <div className="flex items-end justify-between flex-wrap gap-4 md:gap-6 mb-8 md:mb-14">
           <div>
-            <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
+            <p className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3 md:mb-4">
               / Why Choose Us
             </p>
-            <h2 className="font-display font-bold text-4xl md:text-6xl leading-tight max-w-2xl">
+            <h2 className="font-display font-bold text-[1.7rem] sm:text-4xl md:text-6xl leading-tight max-w-2xl">
               The standard of care{" "}
               <span className="italic text-gradient">you've been waiting for.</span>
             </h2>
           </div>
-          <p className="text-muted-foreground max-w-sm">
+          <p className="text-sm md:text-base text-muted-foreground max-w-sm">
             Six quiet promises that shape every consultation, every diagnosis
             and every follow-up at Care Connect.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
           {reasons.map((r, i) => {
             const Icon = r.icon;
             return (
@@ -71,17 +71,17 @@ const Roles = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="glass rounded-3xl p-7 hover-lift relative overflow-hidden group"
+                className="glass rounded-2xl md:rounded-3xl p-4 md:p-7 hover-lift relative overflow-hidden group"
               >
                 <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-primary/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="relative">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-accent grid place-items-center shadow-glow">
-                    <Icon className="w-6 h-6 text-primary-foreground" />
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-gradient-accent grid place-items-center shadow-glow">
+                    <Icon className="w-5 h-5 md:w-6 md:h-6 text-primary-foreground" />
                   </div>
-                  <h3 className="mt-5 font-display text-2xl font-bold">
+                  <h3 className="mt-3 md:mt-5 font-display text-lg md:text-2xl font-bold">
                     {r.title}
                   </h3>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                  <p className="mt-1.5 md:mt-3 text-xs md:text-sm text-muted-foreground leading-relaxed">
                     {r.desc}
                   </p>
                 </div>

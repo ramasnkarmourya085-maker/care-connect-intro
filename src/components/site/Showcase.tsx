@@ -167,37 +167,37 @@ const Showcase = () => {
   }, [lightbox]);
 
   return (
-    <section id="showcase" className="relative py-24 md:py-32">
-      <div className="container mx-auto px-4 space-y-28">
+    <section id="showcase" className="relative py-14 md:py-32">
+      <div className="container mx-auto px-4 space-y-16 md:space-y-28">
         {showcases.map((s) => (
           <div key={s.id}>
-            <div className="max-w-2xl mx-auto text-center mb-16">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-xs uppercase tracking-widest text-muted-foreground mb-6">
-                <Sparkles className="w-3.5 h-3.5 text-primary" />
+            <div className="max-w-2xl mx-auto text-center mb-8 md:mb-16">
+              <div className="inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 rounded-full glass text-[10px] md:text-xs uppercase tracking-widest text-muted-foreground mb-4 md:mb-6">
+                <Sparkles className="w-3 h-3 md:w-3.5 md:h-3.5 text-primary" />
                 {s.badge}
               </div>
-              <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight">
+              <h2 className="font-display text-[1.7rem] sm:text-4xl md:text-5xl font-bold leading-tight">
                 {s.title} <span className="text-gradient">{s.highlight}</span>
               </h2>
-              <p className="mt-5 text-muted-foreground text-lg">{s.intro}</p>
+              <p className="mt-3 md:mt-5 text-sm md:text-lg text-muted-foreground">{s.intro}</p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-5 max-w-5xl mx-auto mb-8 md:mb-12">
               {s.stats.map(({ icon: Icon, label, value }) => (
-                <div key={label} className="glass rounded-3xl p-6 hover-lift">
-                  <div className="w-11 h-11 rounded-xl bg-primary/15 ring-1 ring-primary/40 grid place-items-center mb-4">
-                    <Icon className="w-5 h-5 text-primary" />
+                <div key={label} className="glass rounded-2xl md:rounded-3xl p-4 md:p-6 hover-lift">
+                  <div className="w-9 h-9 md:w-11 md:h-11 rounded-xl bg-primary/15 ring-1 ring-primary/40 grid place-items-center mb-3 md:mb-4">
+                    <Icon className="w-4 h-4 md:w-5 md:h-5 text-primary" />
                   </div>
-                  <p className="text-xs uppercase tracking-widest text-muted-foreground mb-1">
+                  <p className="text-[10px] md:text-xs uppercase tracking-widest text-muted-foreground mb-1">
                     {label}
                   </p>
-                  <p className="font-display text-lg font-semibold">{value}</p>
+                  <p className="font-display text-base md:text-lg font-semibold">{value}</p>
                 </div>
               ))}
             </div>
 
             <div
-              className={`grid gap-6 max-w-5xl mx-auto ${
+              className={`grid gap-4 md:gap-6 max-w-5xl mx-auto ${
                 s.gallery.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"
               }`}
             >
@@ -253,8 +253,8 @@ const Showcase = () => {
                       </h3>
                     </div>
                   </button>
-                  <div className="p-6">
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                  <div className="p-4 md:p-6">
+                    <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
                       {e.description}
                     </p>
                   </div>
