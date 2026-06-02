@@ -53,7 +53,7 @@ const About = () => {
         </div>
 
         {/* stats */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="mt-10 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
           {stats.map((s, i) => (
             <motion.div
               key={s.label}
@@ -61,9 +61,9 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="glass rounded-3xl p-6 hover-lift"
+              className="glass rounded-2xl md:rounded-3xl p-4 md:p-6 hover-lift"
             >
-              <div className="font-display text-4xl md:text-5xl font-bold text-gradient">
+              <div className="font-display text-2xl md:text-5xl font-bold text-gradient">
                 {s.value}
               </div>
               <div className="text-xs uppercase tracking-wider text-muted-foreground mt-2">
