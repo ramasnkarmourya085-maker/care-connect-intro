@@ -61,7 +61,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="mt-7 md:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4"
         >
           <Button variant="hero" size="lg" asChild>
             <a href="#contact">
