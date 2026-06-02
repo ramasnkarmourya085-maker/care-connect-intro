@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section
       id="top"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20"
+      className="relative min-h-[88vh] md:min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-12 md:pt-32 md:pb-20"
     >
       {/* background image */}
       <img
