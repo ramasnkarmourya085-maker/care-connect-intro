@@ -15,12 +15,12 @@ const About = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-6"
+          className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4 md:mb-6"
         >
           / About Us
         </motion.p>
 
-        <div className="grid md:grid-cols-5 gap-10 items-start">
+        <div className="grid md:grid-cols-5 gap-6 md:gap-10 items-start">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
