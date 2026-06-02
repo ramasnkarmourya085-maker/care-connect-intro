@@ -63,25 +63,25 @@ const services = [
 
 const Features = () => {
   return (
-    <section id="services" className="relative py-28 px-6">
+    <section id="services" className="relative py-14 md:py-28 px-4 md:px-6">
       <div className="container max-w-6xl">
-        <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
+        <div className="flex items-end justify-between flex-wrap gap-4 md:gap-6 mb-8 md:mb-14">
           <div>
-            <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
+            <p className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3 md:mb-4">
               / Our Services
             </p>
-            <h2 className="font-display font-bold text-4xl md:text-6xl leading-tight max-w-2xl">
+            <h2 className="font-display font-bold text-[1.7rem] sm:text-4xl md:text-6xl leading-tight max-w-2xl">
               Complete care, under{" "}
               <span className="italic text-gradient">one calm roof.</span>
             </h2>
           </div>
-          <p className="text-muted-foreground max-w-sm">
+          <p className="text-sm md:text-base text-muted-foreground max-w-sm">
             Every specialty is led by experienced consultants and supported by
             modern, gentle technology — so the whole family feels at home.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
           {services.map((f, i) => {
             const Icon = f.icon;
             return (
