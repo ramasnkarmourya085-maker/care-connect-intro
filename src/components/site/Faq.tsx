@@ -34,27 +34,27 @@ const faqs = [
 
 const Faq = () => {
   return (
-    <section id="faq" className="relative py-14 md:py-28 px-4 md:px-6">
+    <section id="faq" className="relative py-28 px-6">
       <div className="container max-w-6xl">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
           <div>
-            <p className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3 md:mb-4">
+            <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
               / FAQ's
             </p>
-            <h2 className="font-display font-bold text-[1.7rem] sm:text-4xl md:text-6xl leading-tight">
+            <h2 className="font-display font-bold text-4xl md:text-6xl leading-tight">
               Questions, <br /> answered <br />
               <span className="italic text-gradient">honestly.</span>
             </h2>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-2.5 md:space-y-3">
+          <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((f, i) => (
               <AccordionItem
                 key={i}
                 value={`item-${i}`}
-                className="glass rounded-2xl border-border/60 px-4 md:px-5"
+                className="glass rounded-2xl border-border/60 px-5"
               >
-                <AccordionTrigger className="text-left text-sm md:text-base font-medium hover:no-underline py-4 md:py-5">
+                <AccordionTrigger className="text-left text-base font-medium hover:no-underline py-5">
                   {f.q}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground text-sm leading-relaxed">

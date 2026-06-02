@@ -63,25 +63,25 @@ const services = [
 
 const Features = () => {
   return (
-    <section id="services" className="relative py-14 md:py-28 px-4 md:px-6">
+    <section id="services" className="relative py-28 px-6">
       <div className="container max-w-6xl">
-        <div className="flex items-end justify-between flex-wrap gap-4 md:gap-6 mb-8 md:mb-14">
+        <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
           <div>
-            <p className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3 md:mb-4">
+            <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
               / Our Services
             </p>
-            <h2 className="font-display font-bold text-[1.7rem] sm:text-4xl md:text-6xl leading-tight max-w-2xl">
+            <h2 className="font-display font-bold text-4xl md:text-6xl leading-tight max-w-2xl">
               Complete care, under{" "}
               <span className="italic text-gradient">one calm roof.</span>
             </h2>
           </div>
-          <p className="text-sm md:text-base text-muted-foreground max-w-sm">
+          <p className="text-muted-foreground max-w-sm">
             Every specialty is led by experienced consultants and supported by
             modern, gentle technology — so the whole family feels at home.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {services.map((f, i) => {
             const Icon = f.icon;
             return (
@@ -91,18 +91,18 @@ const Features = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.06 }}
-                className="glass rounded-2xl md:rounded-3xl p-4 md:p-6 hover-lift relative overflow-hidden group"
+                className="glass rounded-3xl p-6 hover-lift relative overflow-hidden group"
               >
                 <div className="relative">
                   <div
-                    className={`w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl grid place-items-center ${f.iconBg}`}
+                    className={`w-12 h-12 rounded-2xl grid place-items-center ${f.iconBg}`}
                   >
-                    <Icon className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2.2} />
+                    <Icon className="w-6 h-6" strokeWidth={2.2} />
                   </div>
-                  <h3 className="mt-3 md:mt-5 font-display text-base md:text-xl font-bold">
+                  <h3 className="mt-5 font-display text-xl font-bold">
                     {f.title}
                   </h3>
-                  <p className="mt-1.5 md:mt-2 text-xs md:text-sm text-muted-foreground leading-relaxed">
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                     {f.desc}
                   </p>
                 </div>
