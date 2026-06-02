@@ -23,12 +23,12 @@ const Hero = () => {
       <div className="absolute top-1/3 -left-32 w-[500px] h-[500px] rounded-full bg-primary/20 blur-[120px] animate-pulse-glow" />
       <div className="absolute bottom-0 -right-32 w-[500px] h-[500px] rounded-full bg-accent/15 blur-[140px] animate-pulse-glow" />
 
-      <div className="relative z-10 container max-w-5xl px-6 text-center">
+      <div className="relative z-10 container max-w-5xl px-4 md:px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
+          className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full glass mb-5 md:mb-8"
         >
           <Sparkles className="w-4 h-4 text-primary" strokeWidth={2.5} />
           <span className="text-xs tracking-[0.25em] uppercase text-muted-foreground">
