@@ -51,7 +51,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-8 max-w-2xl mx-auto text-base md:text-lg text-muted-foreground leading-relaxed"
+          className="mt-5 md:mt-8 max-w-2xl mx-auto text-sm md:text-lg text-muted-foreground leading-relaxed"
         >
           A modern healthcare experience built around you — expert doctors,
           quiet spaces and quietly powerful technology, all under one roof.
