@@ -71,17 +71,17 @@ const Roles = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="glass rounded-3xl p-7 hover-lift relative overflow-hidden group"
+                className="glass rounded-2xl md:rounded-3xl p-4 md:p-7 hover-lift relative overflow-hidden group"
               >
                 <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-primary/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="relative">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-accent grid place-items-center shadow-glow">
-                    <Icon className="w-6 h-6 text-primary-foreground" />
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-gradient-accent grid place-items-center shadow-glow">
+                    <Icon className="w-5 h-5 md:w-6 md:h-6 text-primary-foreground" />
                   </div>
-                  <h3 className="mt-5 font-display text-2xl font-bold">
+                  <h3 className="mt-3 md:mt-5 font-display text-lg md:text-2xl font-bold">
                     {r.title}
                   </h3>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                  <p className="mt-1.5 md:mt-3 text-xs md:text-sm text-muted-foreground leading-relaxed">
                     {r.desc}
                   </p>
                 </div>
