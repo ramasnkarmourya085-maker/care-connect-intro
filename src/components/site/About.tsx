@@ -37,7 +37,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="md:col-span-2 space-y-5 text-muted-foreground leading-relaxed"
+            className="md:col-span-2 space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed"
           >
             <p>
               At Care Connect, every detail is designed around your comfort.
