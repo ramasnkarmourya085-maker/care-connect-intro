@@ -40,7 +40,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="font-display font-bold text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight"
+          className="font-display font-bold text-[2rem] sm:text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight"
         >
           Care You Trust.
           <br />
