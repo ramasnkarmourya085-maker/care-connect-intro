@@ -52,7 +52,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-10">
+          <div className="grid grid-cols-2 gap-6 md:gap-10">
             <div>
               <h4 className="font-semibold mb-4 text-sm">Explore</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
