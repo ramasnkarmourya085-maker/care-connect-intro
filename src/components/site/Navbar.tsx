@@ -79,17 +79,17 @@ const Navbar = () => {
     );
 
   return (
-    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1.5rem)] max-w-6xl">
+    <header className="fixed top-3 md:top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1rem)] md:w-[calc(100%-1.5rem)] max-w-6xl">
       <nav
-        className={`glass rounded-full px-4 py-3 flex items-center justify-between transition-all ${
+        className={`glass rounded-full px-3 md:px-4 py-2 md:py-3 flex items-center justify-between transition-all ${
           scrolled ? "shadow-elevated" : ""
         }`}
       >
-        <a href="#top" className="flex items-center gap-2 pl-2">
-          <span className="grid place-items-center w-10 h-10 rounded-xl overflow-hidden bg-background ring-1 ring-primary/40">
+        <a href="#top" className="flex items-center gap-2 pl-1 md:pl-2">
+          <span className="grid place-items-center w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl overflow-hidden bg-background ring-1 ring-primary/40">
             <img src={logo} alt="Care Connect logo" className="w-full h-full object-cover" />
           </span>
-          <span className="font-display text-xl font-bold tracking-tight">
+          <span className="font-display text-base md:text-xl font-bold tracking-tight">
             Care <span className="text-gradient">Connect</span>
           </span>
         </a>
