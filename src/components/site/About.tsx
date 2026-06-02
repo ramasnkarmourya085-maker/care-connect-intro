@@ -26,7 +26,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="md:col-span-3 font-display font-bold text-3xl md:text-5xl leading-tight"
+            className="md:col-span-3 font-display font-bold text-[1.7rem] sm:text-3xl md:text-5xl leading-tight"
           >
             A clinic that treats people —{" "}
             <em className="italic text-gradient">not just patients.</em>
