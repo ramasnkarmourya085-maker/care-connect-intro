@@ -79,73 +79,70 @@ const Navbar = () => {
     );
 
   return (
-    <>
-      <header className="sticky top-0 z-50 w-full">
-        <nav
-          className={`glass border-b border-border/40 px-6 md:px-10 py-3.5 flex items-center justify-between transition-all ${
-            scrolled ? "shadow-elevated backdrop-blur-xl" : ""
-          }`}
-        >
-          <a href="#top" className="flex items-center gap-2.5">
-            <span className="grid place-items-center w-10 h-10 rounded-xl overflow-hidden bg-background ring-1 ring-primary/40">
-              <img src={logo} alt="Care Connect logo" className="w-full h-full object-cover" />
-            </span>
-            <span className="font-display text-xl font-bold tracking-tight">
-              Care <span className="text-gradient">Connect</span>
-            </span>
-          </a>
+    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1.5rem)] max-w-6xl">
+      <nav
+        className={`glass rounded-full px-4 py-3 flex items-center justify-between transition-all ${
+          scrolled ? "shadow-elevated" : ""
+        }`}
+      >
+        <a href="#top" className="flex items-center gap-2 pl-2">
+          <span className="grid place-items-center w-10 h-10 rounded-xl overflow-hidden bg-background ring-1 ring-primary/40">
+            <img src={logo} alt="Care Connect logo" className="w-full h-full object-cover" />
+          </span>
+          <span className="font-display text-xl font-bold tracking-tight">
+            Care <span className="text-gradient">Connect</span>
+          </span>
+        </a>
 
-          <ul className="hidden md:flex items-center gap-7 text-sm text-muted-foreground">
-            {links.map((l) => (
-              <li key={l.href}>
-                <a href={l.href} className="relative hover:text-foreground transition-colors group">
-                  {l.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary rounded-full transition-all duration-300 group-hover:w-full" />
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <div className="hidden md:flex items-center gap-3">
-            <ThemeToggle />
-            <AuthArea />
-          </div>
-
-          <div className="md:hidden flex items-center gap-2">
-            <ThemeToggle />
-            <button
-              aria-label="Toggle menu"
-              className="p-2 text-foreground"
-              onClick={() => setOpen((o) => !o)}
-            >
-              {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
-          </div>
-        </nav>
-
-        {open && (
-          <div className="md:hidden glass border-b border-border/40 px-6 py-4 flex flex-col gap-3">
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="px-3 py-2.5 rounded-xl hover:bg-secondary text-sm font-medium"
-              >
+        <ul className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
+          {links.map((l) => (
+            <li key={l.href}>
+              <a href={l.href} className="hover:text-foreground transition-colors">
                 {l.label}
               </a>
-            ))}
-            {session && (
-              <div className="px-3 py-2 text-xs text-muted-foreground inline-flex items-center gap-2">
-                <User className="w-3.5 h-3.5 text-primary" />
-                <span className="truncate">{userLabel}</span>
-              </div>
-            )}
-            <AuthArea onAction={() => setOpen(false)} />
-          </div>
-        )}
-      </header>
-    </>
+            </li>
+          ))}
+        </ul>
+
+        <div className="hidden md:flex items-center gap-3">
+          <ThemeToggle />
+          <AuthArea />
+        </div>
+
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            aria-label="Toggle menu"
+            className="p-2 text-foreground"
+            onClick={() => setOpen((o) => !o)}
+          >
+            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
+      </nav>
+
+      {open && (
+        <div className="md:hidden mt-2 glass rounded-3xl p-4 flex flex-col gap-3">
+          {links.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              className="px-3 py-2 rounded-xl hover:bg-secondary text-sm"
+            >
+              {l.label}
+            </a>
+          ))}
+          {session && (
+            <div className="px-3 py-2 text-xs text-muted-foreground inline-flex items-center gap-2">
+              <User className="w-3.5 h-3.5 text-primary" />
+              <span className="truncate">{userLabel}</span>
+            </div>
+          )}
+          <AuthArea onAction={() => setOpen(false)} />
+        </div>
+      )}
+    </header>
   );
 };
 
