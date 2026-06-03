@@ -9,12 +9,15 @@ import Cta from "@/components/site/TechStack";
 import Faq from "@/components/site/Faq";
 import Reviews from "@/components/site/Reviews";
 import Footer from "@/components/site/Footer";
+import TrustMarquee from "@/components/site/TrustMarquee";
+import WhatsAppFloat from "@/components/site/WhatsAppFloat";
 
 const Index = () => {
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar />
       <Hero />
+      <TrustMarquee />
       <About />
       <Features />
       <Roles />
@@ -24,9 +27,9 @@ const Index = () => {
       <Cta />
       <Reviews />
       <Footer />
+      <WhatsAppFloat />
     </main>
   );
 };
 
 export default Index;
-
