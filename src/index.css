@@ -181,3 +181,37 @@
 .animate-float { animation: float-slow 8s ease-in-out infinite; }
 .animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
 .animate-scroll-hint { animation: scroll-hint 2s ease-in-out infinite; }
+
+/* Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 35s linear infinite; will-change: transform; }
+
+/* Slow ring rotation */
+@keyframes spin-very-slow {
+  to { transform: rotate(360deg); }
+}
+.animate-spin-very-slow { animation: spin-very-slow 60s linear infinite; }
+
+/* Shimmer line */
+@keyframes shimmer-x {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.animate-shimmer-x { animation: shimmer-x 3s ease-in-out infinite; }
+
+/* WhatsApp ripples + bounce */
+@keyframes ripple {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+.animate-ripple-1 { animation: ripple 2.2s ease-out infinite; }
+.animate-ripple-2 { animation: ripple 2.2s ease-out infinite; animation-delay: 1.1s; }
+
+@keyframes bounce-soft {
+  0%, 100% { transform: translateY(0) scale(1.1); }
+  50% { transform: translateY(-6px) scale(1.1); }
+}
+.animate-bounce-soft { animation: bounce-soft 0.8s ease-in-out infinite; }
